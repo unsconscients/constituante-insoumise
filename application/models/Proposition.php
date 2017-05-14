@@ -10,7 +10,8 @@ Class Proposition extends CI_Model {
     }
 
 
-    public function ajouter_propositon($array){
+    public function ajouter_propositon($array)
+    {
 
       $ok = false;
 
@@ -36,6 +37,42 @@ Class Proposition extends CI_Model {
       }
 
       return $ok;
+
+    }
+
+
+
+    public function get_propositions()
+    {
+
+      $propositions = array();
+
+      try
+      {
+        $sql = 'SELECT * FROM propositions';
+
+        $query = $this->db->query();
+        foreach($query->result() as $ligne){
+
+          $proposition = array(
+            "id" => $ligne->id,
+            "_id" => $ligne->_id,
+            "auteur_pseudo" => $ligne->auteur_pseudo,
+            "auteur_email" => $ligne->auteur_email,
+
+            "titre" => $ligne->titre,
+            "mots_cles" => $ligne->mots_cles,
+            "contenu" => $ligne->contenu,
+            "_date" => $ligne->_date
+          );
+
+          $propositions[] = $proposition;
+        }
+
+      }
+      catch( Exception $e ) { }
+
+      return $propositions;
 
     }
 

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Soutenir extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,12 +20,15 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->model('proposition');
 
-		$this->load->helper('url');
-		
+		$propositions = $this->proposition->get_propositions();
+
 		$this->load->view('header');
 
-			echo '<h1>Site en cours de construction</h1>';
+			$this->load->view('soutenir_acceuil', array(
+				"propositions" => $propositions
+			));
 
 		$this->load->view('footer');
 	}
