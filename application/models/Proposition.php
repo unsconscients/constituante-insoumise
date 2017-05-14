@@ -51,7 +51,7 @@ Class Proposition extends CI_Model {
       {
         $sql = 'SELECT * FROM propositions';
 
-        $query = $this->db->query();
+        $query = $this->db->query($sql);
         foreach($query->result() as $ligne){
 
           $proposition = array(
