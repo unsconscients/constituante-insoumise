@@ -49,7 +49,7 @@ Class Proposition extends CI_Model {
 
       try
       {
-        $sql = 'SELECT * FROM propositions';
+        $sql = 'SELECT * FROM propositions WHERE valide = 1';
 
         $query = $this->db->query($sql);
         foreach($query->result() as $ligne){
