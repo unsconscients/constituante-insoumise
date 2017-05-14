@@ -45,7 +45,7 @@ class Soutenir extends CI_Controller {
 				'proposition' => $proposition
 			));
 			
-		$this->load-view('footer');
+		$this->load->view('footer');
 	}
 
 
