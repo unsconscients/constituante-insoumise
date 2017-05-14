@@ -37,7 +37,7 @@ class Proposer extends CI_Controller {
 			// On part également du principe que toutes les inputs du formulaire
 			// existent et sont != null .
 
-			$this->load->model('Proposition');
+			$this->load->model('proposition');
 
 			$proposition = array(
 				"auteur_pseudo" => $this->input->post('pseudo'),
