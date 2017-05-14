@@ -59,6 +59,7 @@ Class Proposition extends CI_Model {
             "_id" => $ligne->_id,
             "auteur_pseudo" => $ligne->auteur_pseudo,
             "auteur_email" => $ligne->auteur_email,
+            "gravatar_hash" => md5('mullermarc67240@gmail.com'), // md5($ligne->auteur_email),
 
             "titre" => $ligne->titre,
             "mots_cles" => $ligne->mots_cles,
