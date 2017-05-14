@@ -45,8 +45,7 @@ class Proposer extends CI_Controller {
 
 				"titre" => $this->input->post('titre'),
 				"mots_cles" => $this->input->post('mots'),
-				"contenu" => $this->input->post('contenu'),
-				"_date" => date("d-m-Y H:i:sa")
+				"contenu" => $this->input->post('contenu')
 			);
 
 			$ok = $this->proposition->ajouter_propositon($proposition);
