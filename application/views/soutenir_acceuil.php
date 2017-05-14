@@ -9,7 +9,7 @@
 
     <div class="table-responsive">
 
-      <table class = "table table-striped table-bordered table-filter">
+      <table class = "table  table-filter">
         <tbody>
           <?php
 
