@@ -1,0 +1,99 @@
+/****
+  Les styles de la plateforme constituante insoumise !
+**/
+
+body {
+  margin-top : 71px;
+
+  /*background: linear-gradient(rgba(0, 152, 182, 0.6),rgba(0, 152, 182, 0.3)),linear-gradient(rgba(0, 152, 182, 0.2),rgba(0, 152, 182, 1) 50vw, rgba(0, 152, 182, 1) 60vw);
+*/
+  background-color : rgba(0, 152, 182,0.6);
+
+}
+
+
+.navbar-insoumis{
+
+  background-image: radial-gradient(circle farthest-corner at 50% 100% , #E06540 0%, #C7462C 75%);
+
+  border : 0px;
+
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px;
+
+
+}
+
+.navbar-inverse .navbar-nav> li> a{
+  color : #FFF;
+}
+
+.navbar-inverse .navbar-nav> li> a.navbar-insoumis-titre{
+  font-size : 22px;
+}
+
+.navbar-inverse .navbar-nav> li> a.navbar-insoumis-boutton{
+  font-size : 16px;
+  font-weight: bold;
+}
+
+
+
+.panel-proposition {
+
+  border: 1px solid #dddddd;
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 5px;
+
+}
+
+.panel-proposition .panel-heading {
+  height: 95px;
+  padding: 20px 15px;
+}
+
+.panel-proposition .panel-heading .avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+.panel-proposition .panel-heading .meta .title {
+  margin-bottom: 0;
+}
+.panel-proposition .panel-heading .meta .title a {
+  color: black;
+}
+.panel-proposition .panel-heading .meta .title a:hover {
+  color: #aaaaaa;
+}
+.panel-proposition .panel-heading .meta .time {
+  margin-top: 8px;
+  color: #999;
+}
+
+
+.panel-proposition .post-image .image {
+  width: 100%;
+  height: auto;
+}
+
+.panel-proposition .panel-body {
+  padding : 10px 30px;
+}
+
+.panel-proposition .panel-footer {
+
+  padding-bottom : 13px;
+}
+
+.panel-proposition .panel-footer .btn {
+  width : 70px;
+}
+
+
+.panel-commentaire .list-group-item{
+  padding : 10px 30px;
+}
+
+.panel-commentaire .panel-footer {
+  padding-bottom : 13px;
+}
