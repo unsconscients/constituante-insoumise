@@ -14,7 +14,8 @@
           <table class = "table  table-filter">
             <tbody>
               <?php foreach ($propositions as $prop) {
-                echo '<tr class = "clickable-href" data-href = "'.base_url('soutenir/proposition/'.$prop['id']').'">';
+
+                echo '<tr class = "clickable-href" data-href = "'.base_url('soutenir/proposition/'.$prop['id']).'">';
                   echo '<td>';
 
                     echo '<div class="media">';
