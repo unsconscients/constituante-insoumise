@@ -92,18 +92,18 @@ Class Proposition extends CI_Model {
 
         if($query->num_rows() == 1){
           $proposition = array(
-            "id" => $ligne->id,
-            "_id" => $ligne->_id,
-            "auteur_pseudo" => $ligne->auteur_pseudo,
-            "auteur_email" => $ligne->auteur_email,
+            "id" => $query->row()->id,
+            "_id" => $query->row()->_id,
+            "auteur_pseudo" => $query->row()->auteur_pseudo,
+            "auteur_email" => $query->row()->auteur_email,
             "gravatar_hash" => md5('mullermarc67240@gmail.com'), // md5($ligne->auteur_email),
 
-            "titre" => $ligne->titre,
-            "mots_cles" => $ligne->mots_cles,
-            "contenu" => $ligne->contenu,
-            "_date" => $ligne->_date,
-            "aime" => $ligne->aime,
-            "aime_pas" => $ligne->aime_pas
+            "titre" => $query->row()->titre,
+            "mots_cles" => $query->row()->mots_cles,
+            "contenu" => $query->row()->contenu,
+            "_date" => $query->row()->_date,
+            "aime" => $query->row()->aime,
+            "aime_pas" => $query->row()->aime_pas
           );
         }
 
