@@ -59,12 +59,14 @@ Class Proposition extends CI_Model {
             "_id" => $ligne->_id,
             "auteur_pseudo" => $ligne->auteur_pseudo,
             "auteur_email" => $ligne->auteur_email,
-            "gravatar_hash" => md5('mullermarc67240@gmail.com'), // md5($ligne->auteur_email),
+            "gravatar_hash" => md5($ligne->auteur_email),
 
             "titre" => $ligne->titre,
             "mots_cles" => $ligne->mots_cles,
             "contenu" => $ligne->contenu,
-            "_date" => $ligne->_date
+            "_date" => $ligne->_date,
+            "pour" => $ligne->pour,
+            "contre" => $ligne->contre
           );
 
           $propositions[] = $proposition;
@@ -102,8 +104,8 @@ Class Proposition extends CI_Model {
             "mots_cles" => $query->row()->mots_cles,
             "contenu" => $query->row()->contenu,
             "_date" => $query->row()->_date,
-            "aime" => $query->row()->aime,
-            "aime_pas" => $query->row()->aime_pas
+            "pour" => $query->row()->pour,
+            "contre" => $query->row()->contre
           );
         }
 
