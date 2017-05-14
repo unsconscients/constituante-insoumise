@@ -1,9 +1,9 @@
 
 
     <footer>
-      <p>La Plateforme constituante des Insoumis - 2017</p>
-      <p>par <b>Les UnsConscients</b></p>
-      <p>Accès Modérateurs</p>
+      <p>La Plateforme constituante des Insoumis - 2017 <br>
+      par <b>Les UnsConscients</b> <br>
+      <a href="<?php base_url('moderateurs');?>">Accès Modérateurs</a> <br>
     </footer>
 
   </body>
