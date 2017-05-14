@@ -79,10 +79,40 @@ Class Proposition extends CI_Model {
 
 
 
+    public function get_proposition($id)
+    {
 
+      $proposition = array();
 
+      try
+      {
+        $sql = 'SELECT * FROM propositions WHERE valide = 1 && id = ?';
 
+        $query = $this->db->query($sql, array($id));
 
+        if($query->num_rows() == 1){
+          $proposition = array(
+            "id" => $ligne->id,
+            "_id" => $ligne->_id,
+            "auteur_pseudo" => $ligne->auteur_pseudo,
+            "auteur_email" => $ligne->auteur_email,
+            "gravatar_hash" => md5('mullermarc67240@gmail.com'), // md5($ligne->auteur_email),
+
+            "titre" => $ligne->titre,
+            "mots_cles" => $ligne->mots_cles,
+            "contenu" => $ligne->contenu,
+            "_date" => $ligne->_date,
+            "aime" => $ligne->aime,
+            "aime_pas" => $ligne->aime_pas
+          );
+        }
+
+      }
+      catch( Exception $e ) { }
+
+      return $proposition;
+
+    }
 
 }
 

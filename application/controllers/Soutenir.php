@@ -32,4 +32,21 @@ class Soutenir extends CI_Controller {
 
 		$this->load->view('footer');
 	}
+
+
+	public function proposition($id = '')
+	{
+		$this->load->view('header');
+
+			$this->load->model('proposition');
+			$proposition = $this->proposition->get_proposition($id);
+
+			$this->load->view('soutenir_proposition', array(
+				'proposition' => $proposition
+			));
+			
+		$this->load-view('footer');
+	}
+
+
 }
