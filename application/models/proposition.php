@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-Class Proposition_model extends CI_Model {
+Class Proposition extends CI_Model {
 
 
     public function __construct()
