@@ -48,6 +48,14 @@
 
 </div>
 
+<script charset="utf-8">
+
+  $(".clickable-href").click(function(){
+    window.location = $(this).data("href");
+  });
+
+</script>
+
 <style media="screen">
 
 .table-filter {
