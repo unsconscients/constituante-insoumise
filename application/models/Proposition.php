@@ -96,7 +96,7 @@ Class Proposition extends CI_Model {
             "_id" => $query->row()->_id,
             "auteur_pseudo" => $query->row()->auteur_pseudo,
             "auteur_email" => $query->row()->auteur_email,
-            "gravatar_hash" => md5('mullermarc67240@gmail.com'), // md5($ligne->auteur_email),
+            "gravatar_hash" => md5($query->row()->auteur_email),
 
             "titre" => $query->row()->titre,
             "mots_cles" => $query->row()->mots_cles,
