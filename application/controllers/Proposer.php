@@ -25,9 +25,7 @@ class Proposer extends CI_Controller {
 
 		$this->load->view('header');
 
-		$this->load->view('proposer');
-
-			echo '<h1>Proposer</h1>';
+			$this->load->view('proposer');
 
 		$this->load->view('footer');
 	}
@@ -36,16 +34,26 @@ class Proposer extends CI_Controller {
 	public function propose()
 	{
 
-		if($this->input->post(''))
-		$this->load->helper('url');
+		if($this->input->post('pseudo') != null && $this->input->post('email') != null){
 
-		$this->load->view('header');
+			// On a au moins des coordonnés, on continue...
+			// On part également du principe que toutes les inputs du formulaire
+			// existent et sont != null .
 
-		$this->load->view('proposer');
+			$proposition = array(
+				"pseudo" => $this->input->post('pseudo'),
+				"email" => $this->input->post('email'),
 
-			echo '<h1>Proposer</h1>';
+				"titre" => $this->input->post('titre'),
+				"mots_cles" => $this->input->post('mots'),
+				"contenu" => $this->input->post('contenu')
+			);
 
-		$this->load->view('footer');
+			echo json_encode($proposition);
+			
+		}
+
+
 	}
 
 }
