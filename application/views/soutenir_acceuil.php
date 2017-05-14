@@ -9,29 +9,36 @@
 
     <div class="table-responsive">
 
-      <table class = "table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Auteur</th>
-            <th>Titre</th>
-            <th>Mots Clés</th>
-            <th>Date</th>
-          </tr>
-        </thead>
+      <table class = "table table-striped table-bordered table-filter">
         <tbody>
-        <?php
+          <?php
 
-        foreach ($propositions as $prop) {
-          echo '<tr>';
-            echo '<td>'.$prop['auteur_pseudo'].'</td>';
-            echo '<td>'.$prop['titre'].'</td>';
-            echo '<td>'.$prop['mots_cles'].'</td>';
-            echo '<td>'.$prop['_date'].'</td>';
-          echo '</tr>';
+          foreach ($propositions as $prop) {
+            echo '<tr>';
+              echo '<td>';
 
-        }
+                echo '<div class="media">';
 
-        ?>
+                  echo '<a href="#" class="pull-left"> <img src="https://www.gravatar.com/avatar/d878eb1a022ab9a731f3e1986c081d0a" class="media-photo"> </a>';
+                  echo '<div class="media-body">';
+                    echo '<span class="media-meta pull-right">'.$prop['_date'].'</span>';
+                    echo '<h4 class="title">';
+                      echo $prop['auteur_pseudo'];
+                      echo '<span class="pull-right pendiente">(Pendiente)</span>';
+                    echo '</h4>';
+                    echo '<p class="summary">'.$prop['titre'].'</p>';
+                  echo '</div>';
+
+                echo '</div>';
+
+              echo '</td>';
+            echo '</tr>';
+
+          }
+
+
+          ?>
+
 
         </tbody>
       </table>
