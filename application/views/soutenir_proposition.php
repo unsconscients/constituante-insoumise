@@ -36,8 +36,8 @@
 
         <div class="pull-right">
 
-          <button type="button" class="btn btn-success"><span class = "fa fa-thumbs-up"></span> <?php echo $proposition['aime']?></button>
-          <button type="button" class="btn btn-danger"><span class = "fa fa-thumbs-down"></span> <?php echo $proposition['aime_pas']?> </button>
+          <button type="button" class="btn btn-success"><span class = "fa fa-thumbs-up"></span> <?php echo $proposition['pour']?></button>
+          <button type="button" class="btn btn-danger"><span class = "fa fa-thumbs-down"></span> <?php echo $proposition['contre']?> </button>
 
         </div>
 
