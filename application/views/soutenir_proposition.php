@@ -9,7 +9,7 @@
         <!-- <div class="post-heading"> -->
 
           <div class="pull-left image">
-            <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+            <img "<?php echo 'https://www.gravatar.com/avatar/'.$proposition['gravatar_hash'] ?>" class="img-circle avatar" alt="user profile image">
           </div>
           <div class="pull-left meta">
             <div class="title h5">
