@@ -25,7 +25,7 @@
                         echo '<span class="media-meta pull-right">'.$prop['_date'].'</span>';
                         echo '<h4 class="title">';
                           echo $prop['auteur_pseudo'];
-                          echo '<span class="pull-right"><span class = "text-success">'.$prop['pour'].' pour </span> - <span class = "text-danger">'.$prop['contre'].' contre</span></span>';
+                          echo '<span class="pull-right"><span class = "text-success">'.$prop['pour'].' pour</span> - <span class = "text-danger">'.$prop['contre'].' contre</span></span>';
                         echo '</h4>';
                         echo '<p class="summary">'.$prop['titre'].'</p>';
                       echo '</div>';
@@ -90,7 +90,6 @@ margin: 0;
 }
 .table-filter .media .title span {
 font-size: .8em;
-margin-right: 20px;
 }
 .table-filter .media .title span.pagado {
 color: #5cb85c;
