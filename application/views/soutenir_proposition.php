@@ -13,7 +13,7 @@
           </div>
           <div class="pull-left meta">
             <div class="title h5">
-              <a href="#"><b><?php echo $proposition['auteur_pseudo']?></b><small>(<?php echo $proposition['auteur_email']?>)</small></a>
+              <a href="#"><b><?php echo $proposition['auteur_pseudo']?></b><small> (<?php echo $proposition['auteur_email']?>)</small></a>
               a fait une proposition.
             </div>
             <h6 class="text-muted time">Le <?php echo $proposition['_date']?></h6>
