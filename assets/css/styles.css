@@ -28,6 +28,23 @@ footer {
 
 }
 
+.jumbotron-insoumis{
+  /*background-color : #E06540;*/
+  background-image: radial-gradient(circle farthest-corner at 50% 100% , #E06540 0%, #C7462C 100%);
+  color : #eee;
+}
+
+
+.panel-insoumis {
+
+  border-color : #E06540;
+}
+
+.panel-insoumis > .panel-heading{
+  background-color : #E06540;
+  color : #eee;
+}
+
 .navbar-inverse .navbar-nav> li> a{
   color : #FFF;
 }
