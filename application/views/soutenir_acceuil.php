@@ -27,8 +27,8 @@
                           echo $prop['auteur_pseudo'];
                         echo '</h4>';
                         echo '<div>';
-                          echo '<p class="summary">'.$prop['titre'].'</p>';
                           echo '<p class="pull-right"><span class = "text-success">'.$prop['pour'].' pour</span> - <span class = "text-danger">'.$prop['contre'].' contre</span> </p>';
+                          echo '<p class="summary">'.$prop['titre'].'</p>';
                         echo '</div>';
                       echo '</div>';
 
