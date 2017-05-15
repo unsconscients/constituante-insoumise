@@ -43,7 +43,7 @@
 
           <div class="form-group">
             <label for="">Contenu</label>
-            <textarea name="contenu" class = "form-control"></textarea>
+            <textarea name="contenu" class = "form-control" rows = "15"></textarea>
           </div>
 
           <div class="form-group">
@@ -56,7 +56,7 @@
       <!-- .panel (proposition) -->
 
       <div class="form-group">
-        <button type="submit" class = "btn btn-default btn-insoumis form-control">Envoyer</button>
+        <button type="submit" class = "btn btn-default btn-insoumis-rouge form-control">Envoyer</button>
       </div>
     </form>
 
