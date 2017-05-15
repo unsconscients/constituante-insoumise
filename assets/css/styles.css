@@ -45,6 +45,42 @@ footer {
   color : #eee;
 }
 
+
+.btn-insoumis-rouge  {
+  background-color: #E06540;
+  border-color : #C7462C;
+  color : #eee;
+  font-weight: bold;
+  font-size : 14px;
+}
+
+.btn-insoumis-rouge:hover {
+  background-color: #d35e3b;
+  border-color : #d35e3b;
+  color : #eee;
+  font-weight: bold;
+  font-size : 14px;
+
+}
+
+.btn-insoumis-bleu  {
+  background-color: #0098b6;
+  border-color : #0098b6;
+  color : #eee;
+  font-weight: bold;
+  font-size : 14px;
+}
+
+.btn-insoumis-bleu:hover  {
+  background-color: #0087a3;
+  border-color : #0087a3;
+  color : #eee;
+  font-weight: bold;
+  font-size : 14px;
+}
+
+
+
 .navbar-inverse .navbar-nav> li> a{
   color : #FFF;
 }
