@@ -52,7 +52,22 @@ class Proposer extends CI_Controller {
 
 			if($ok){
 
-				// La proposition a bien été ajoutée dans la base de données, on affiche
+				// La proposition a bien été ajoutée.
+
+				// On envoie un email de confirmation.
+
+				$this->load->library('email');
+
+				$this->email->from('marc.muller@marcosoft.fr', 'Marc MULLER');
+				$this->email->to('marcusbonus67@gmail.com');
+				$this->email->cc('mullermarc67240@gmail.com');
+
+				$this->email->subject('Email Test');
+				$this->email->message('Testing the email class.');
+
+				$this->email->send();
+
+				//dans la base de données, on affiche
 				// une page de succès à l'utilisateur.
 
 				$this->load->view('header');

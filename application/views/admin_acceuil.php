@@ -1,1 +1,3 @@
-<h1>Kikou les modérateurs</h1>
+<ul class="nav nav-pills nav-stacked">
+  <li><a href="#">Kikou</a></li>
+</ul>
