@@ -28,7 +28,7 @@ Class Proposition extends CI_Model {
           $array['contenu']
         ));
 
-        $ok = true;
+        $ok = $this->db->insert_id();
 
       }
       catch( Exception $e )

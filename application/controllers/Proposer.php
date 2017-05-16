@@ -50,20 +50,35 @@ class Proposer extends CI_Controller {
 
 			$ok = $this->proposition->ajouter_propositon($proposition);
 
-			if($ok){
+			if($ok == false){
 
-				// La proposition a bien été ajoutée.
+				// Une erreur s'est produite, on affiche une page d'erreur à l'utiliseur.
+
+				$this->load->view('header');
+					$this->load->view('proposer_erreur');
+				$this->load->view('footer');
+
+			} else {
+
+				// La proposition a bien été ajoutée -> $ok = id de la proposition.
 
 				// On envoie un email de confirmation.
 
 				$this->load->library('email');
 
-				$this->email->from('marc.muller@marcosoft.fr', 'Marc MULLER');
-				$this->email->to('marcusbonus67@gmail.com');
-				$this->email->cc('mullermarc67240@gmail.com');
+				$this->email->from('moderateurs@lappel-presse.fr', 'Modérateurs de la Plateforme Consitutante');
+				$this->email->to($proposition['auteur_email']);
 
-				$this->email->subject('Email Test');
-				$this->email->message('Testing the email class.');
+				$this->email->subject('Merci de votre participation !');
+
+				$body = $this->load->view('email_confirmation_proposition', array(
+					'email' => array(
+						'auteur_email' => $proposition['auteur_email'],
+						'confirm_url' => base_url('proposer/confirm/'.$ok)
+ 					)
+				), true);
+
+				$this->email->message($body);
 
 				$this->email->send();
 
@@ -75,18 +90,17 @@ class Proposer extends CI_Controller {
 				$this->load->view('footer');
 
 
-			} else {
-				// Une erreur s'est produite, on affiche une page d'erreur à l'utiliseur.
-
-				$this->load->view('header');
-					$this->load->view('proposer_erreur');
-				$this->load->view('footer');
-
 			}
 
 		}
 
+	}
 
+
+	public function confirm($id = ''){
+
+		echo $id;
+		
 	}
 
 
