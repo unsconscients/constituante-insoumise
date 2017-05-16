@@ -19,14 +19,14 @@
     <div class="jumbotron jumbotron-insoumis">
       <h1>Confirmez votre Proposition !</h1>
 
-      <p>Merci <b><?php $email['auteur_email']?></b> pour votre proposition !</p>
+      <p>Merci <b><?php echo $auteur_email; ?></b> pour votre proposition !</p>
 
       <p>Il faut maintenant que vous validiez votre email afin que les modérateurs puisse prendre en compte votre proposition.
         Ceci permet de vérifier les emails et sensibiliser les utilisateurs de la plateforme.
         Pour confirmer votre proposition, cliquez sur ce bouton : </p>
 
         <div class="text-center">
-          <a href = "<?php $email['confirm_url']?>" class = "btn btn-default btn-insoumis-bleu"  >Confirmer</a>
+          <a href = "<?php echo $confirm_url; ?>" class = "btn btn-default btn-insoumis-bleu"  >Confirmer</a>
         </div>
 
     </div>
