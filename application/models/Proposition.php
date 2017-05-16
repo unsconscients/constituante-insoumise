@@ -116,6 +116,14 @@ Class Proposition extends CI_Model {
 
     }
 
+
+
+    public function confirmer_proposition($id)
+    {
+      $sql = "UPDATE propositions SET confirm_email = 1, date_confirm_email = now() WHERE id = ?";
+      $this->db->query($sql, array($id));
+    }
+
 }
 
 ?>

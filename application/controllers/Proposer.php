@@ -64,8 +64,6 @@ class Proposer extends CI_Controller {
 
 				// On envoie un email de confirmation.
 
-
-
 				$config_email = Array(
 			 		'mailtype'  => 'html',
 			 		'charset'   => 'utf-8'
@@ -88,8 +86,7 @@ class Proposer extends CI_Controller {
 
 				$this->email->send();
 
-				//dans la base de données, on affiche
-				// une page de succès à l'utilisateur.
+				//On affiche une page de succès à l'utilisateur.
 
 				$this->load->view('header');
 					$this->load->view('proposer_succes');
@@ -105,7 +102,16 @@ class Proposer extends CI_Controller {
 
 	public function confirm($id = ''){
 
-		echo $id;
+		if($id != null && $id != ''){
+
+			$this->load->model('proposition');
+
+			$this->load->view('header');
+				$this->load->view('msg_confirmation_email');
+			$this->load->view('footer');
+
+		}
+
 
 	}
 
