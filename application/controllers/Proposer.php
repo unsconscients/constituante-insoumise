@@ -71,7 +71,7 @@ class Proposer extends CI_Controller {
 			 		'charset'   => 'utf-8'
 			 	);
 
-			 	$this->load->library('email', $$config_email);
+			 	$this->load->library('email', $config_email);
 
 				$this->email->from('moderateurs@lappel-presse.fr', 'Modérateurs de la Plateforme Consitutante');
 				$this->email->to($proposition['auteur_email']);
