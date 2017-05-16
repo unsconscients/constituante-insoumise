@@ -55,6 +55,10 @@
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
+
+	/*Définition de la timezone !*/
+	ini_set('date.timezone', 'Europe/London');
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
