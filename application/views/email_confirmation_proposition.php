@@ -17,9 +17,9 @@
   <div class="container">
 
     <div class="jumbotron jumbotron-insoumis">
-      <h1>Confirmez votre Proposition !</h1>
+      <h1><?php echo $titre; ?></h1>
 
-      <p>Merci <b><?php echo $auteur_email; ?></b> pour votre proposition !</p>
+      <p>Merci <b><?php echo $auteur_pseudo; ?></b> pour votre proposition !</p>
 
       <p>Il faut maintenant que vous validiez votre email afin que les modérateurs puisse prendre en compte votre proposition.
         Ceci permet de vérifier les emails et sensibiliser les utilisateurs de la plateforme.

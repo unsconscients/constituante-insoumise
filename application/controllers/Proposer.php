@@ -79,7 +79,8 @@ class Proposer extends CI_Controller {
 				$this->email->subject('Merci de votre participation !');
 
 				$body = $this->load->view('email_confirmation_proposition', array(
-			 		'auteur_email' => $proposition['auteur_email'],
+					'auteur_pseudo' => $proposition['auteur_pseudo'],
+					'titre' => $proposition['titre'],
 					'confirm_url' => base_url('proposer/confirm/'.$ok)
 				), true);
 
