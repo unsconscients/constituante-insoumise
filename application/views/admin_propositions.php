@@ -5,7 +5,7 @@
 
       <ul class="nav nav-pills nav-stacked">
         <li ><a href="<?php echo base_url('admin?page=commentaires'); ?>">Commentaires</a></li>
-        <li class = "active"><a href="<?php echo base_url('admin?page=propositions'; ?>">Propositions</a></li>
+        <li class = "active"><a href="<?php echo base_url('admin?page=propositions'); ?>">Propositions</a></li>
       </ul>
     </div>
 
