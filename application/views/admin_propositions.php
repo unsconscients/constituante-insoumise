@@ -44,13 +44,13 @@
 
               <?php // Date de validation ?>
 
-              <?php if($prop['validation'] == 0):?>
+              <?php if($prop['confirmation'] == 0):?>
 
                 <td class = "text-center"><span class = "text-muted">n/a</span></td>
 
               <?php else : ?>
 
-                <td class = "text-center"><span class = "text-muted"><?php echo $prop['date_validation']?></span></td>
+                <td class = "text-center"><span class = "text-muted"><?php echo $prop['date_confirmation']?></span></td>
 
               <?php endif;?>
 
