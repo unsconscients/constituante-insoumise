@@ -86,6 +86,8 @@ class Admin extends CI_Controller {
 	{
 
 		if($quoi == 'proposition'){
+
+			$this->load->model('proposition');
 			$this->proposition->autorise($id);
 
 			redirect('admin?page=propositions');
