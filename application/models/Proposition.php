@@ -119,10 +119,10 @@ Class Proposition extends CI_Model {
             "pour" => $query->row()->pour,
             "contre" => $query->row()->contre,
 
-            "validation" => $ligne->validation,
-            "date_validation" => $ligne->date_validation,
-            "autorisation" => $ligne->autorisation,
-            "date_autorisation" => $ligne->date_autorisation
+            "validation" => $query->row()->validation,
+            "date_validation" => $query->row()->date_validation,
+            "autorisation" => $query->row()->autorisation,
+            "date_autorisation" => $query->row()->date_autorisation
           );
         }
 
