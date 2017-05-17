@@ -41,4 +41,5 @@ body {
   background: #fff;
 
   padding-left : 20px;
+  overflow: scroll;
 }
