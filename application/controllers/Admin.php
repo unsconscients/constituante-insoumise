@@ -54,7 +54,7 @@ class Admin extends CI_Controller {
 				$this->load->model('proposition');
 				$proposition = $this->proposition->get_proposition($id);
 
-				$this->load->view('consulter_proposition', $proposition);
+				$this->load->view('admin_consulter_proposition', $proposition);
 
 			} else if($quoi == 'commentaire'){
 
