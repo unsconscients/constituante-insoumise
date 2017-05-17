@@ -56,9 +56,14 @@ Class Proposition extends CI_Model {
 
       try
       {
-        $sql = 'SELECT * FROM propositions WHERE autorisation = ?';
+        if($aut == 1) {
+          $sql = 'SELECT * FROM propositions WHERE autorisation = 1';
+        } else {
+          $sql = 'SELECT * FROM propositions';
+        }
 
-        $query = $this->db->query($sql, array($aut));
+
+        $query = $this->db->query($sql);
         foreach($query->result() as $ligne){
 
           $proposition = array(
