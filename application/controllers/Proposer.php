@@ -100,11 +100,12 @@ class Proposer extends CI_Controller {
 	}
 
 
-	public function confirm($id = ''){
+	public function valider($id = ''){
 
 		if($id != null && $id != ''){
 
 			$this->load->model('proposition');
+			$this->proposition->valider_proposition($id);
 
 			$this->load->view('header');
 				$this->load->view('msg_confirmation_email');

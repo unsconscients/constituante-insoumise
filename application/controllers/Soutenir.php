@@ -22,7 +22,7 @@ class Soutenir extends CI_Controller {
 	{
 		$this->load->model('proposition');
 
-		$propositions = $this->proposition->get_propositions();
+		$propositions = $this->proposition->get_propositions(true);
 
 		$this->load->view('header');
 
@@ -44,7 +44,7 @@ class Soutenir extends CI_Controller {
 			$this->load->view('soutenir_proposition', array(
 				'proposition' => $proposition
 			));
-			
+
 		$this->load->view('footer');
 	}
 

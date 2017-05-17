@@ -41,17 +41,24 @@ Class Proposition extends CI_Model {
     }
 
 
-
-    public function get_propositions()
+    // Si $autorisation == false on montre TOUTES les proposition (admin)
+    // Sinon on ne montre que les autorisées par les modérateurs.
+    public function get_propositions($autorisation)
     {
 
       $propositions = array();
 
+      // Conversion de boolean en integer (on ne sait jamais !)
+      $aut = 0;
+      if($autorisation){
+        $aut = 1;
+      }
+
       try
       {
-        $sql = 'SELECT * FROM propositions WHERE valide = 1';
+        $sql = 'SELECT * FROM propositions WHERE autorisation = ?';
 
-        $query = $this->db->query($sql);
+        $query = $this->db->query($sql, array($aut));
         foreach($query->result() as $ligne){
 
           $proposition = array(
@@ -66,7 +73,12 @@ Class Proposition extends CI_Model {
             "contenu" => $ligne->contenu,
             "_date" => $ligne->_date,
             "pour" => $ligne->pour,
-            "contre" => $ligne->contre
+            "contre" => $ligne->contre,
+
+            "validation" => $ligne->validation,
+            "date_validation" => $ligne->date_validation,
+            "autorisation" => $ligne->autorisation,
+            "date_autorisation" => $ligne->date_autorisation,
           );
 
           $propositions[] = $proposition;
@@ -118,11 +130,14 @@ Class Proposition extends CI_Model {
 
 
 
-    public function confirmer_proposition($id)
+    public function valider_proposition($id)
     {
-      $sql = "UPDATE propositions SET confirm_email = 1, date_confirm_email = now() WHERE id = ?";
+      $sql = "UPDATE propositions SET validation = 1, date_validation = now() WHERE id = ?";
       $this->db->query($sql, array($id));
     }
+
+
+
 
 }
 
