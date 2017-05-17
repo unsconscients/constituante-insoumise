@@ -78,7 +78,7 @@ Class Proposition extends CI_Model {
             "validation" => $ligne->validation,
             "date_validation" => $ligne->date_validation,
             "autorisation" => $ligne->autorisation,
-            "date_autorisation" => $ligne->date_autorisation,
+            "date_autorisation" => $ligne->date_autorisation
           );
 
           $propositions[] = $proposition;
@@ -117,7 +117,12 @@ Class Proposition extends CI_Model {
             "contenu" => $query->row()->contenu,
             "_date" => $query->row()->_date,
             "pour" => $query->row()->pour,
-            "contre" => $query->row()->contre
+            "contre" => $query->row()->contre,
+
+            "validation" => $ligne->validation,
+            "date_validation" => $ligne->date_validation,
+            "autorisation" => $ligne->autorisation,
+            "date_autorisation" => $ligne->date_autorisation
           );
         }
 

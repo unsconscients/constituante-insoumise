@@ -4,8 +4,8 @@
     <div class="container-fluid">
 
       <ul class="nav nav-pills nav-stacked">
-        <li ><a href="#">Commentaires</a></li>
-        <li class = "active"><a href="#">Propositions</a></li>
+        <li ><a href="<?php echo base_url('admin?page=commentaires'); ?>">Commentaires</a></li>
+        <li class = "active"><a href="<?php echo base_url('admin?page=propositions'; ?>">Propositions</a></li>
       </ul>
     </div>
 
@@ -70,9 +70,9 @@
                 <div class="dropdown">
                   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="caret"></span> </button>
                   <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                    <li><a href="<?php echo base_url('admin/consulter/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-search"></span> Consulter</a></li>
-                    <li><a href="<?php echo base_url('admin/autoriser/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-ok"></span> Autoriser</a></li>
-                    <li><a href="<?php echo base_url('admin/supprimer/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-remove"></span> Supprimer</a></li>
+                    <li><a href="<?php echo base_url('admin/consulter/proposition/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-search"></span> Consulter</a></li>
+                    <li><a href="<?php echo base_url('admin/autoriser/proposition/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-ok"></span> Autoriser</a></li>
+                    <li><a href="<?php echo base_url('admin/supprimer/proposition/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-remove"></span> Supprimer</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#"><span class = "glyphicon glyphicon-envelope"></span> Contacter l'auteur</a></li>
                   </ul>
