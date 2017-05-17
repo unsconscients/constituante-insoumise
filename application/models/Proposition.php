@@ -135,9 +135,16 @@ Class Proposition extends CI_Model {
 
 
 
-    public function valider_proposition($id)
+    public function valider($id)
     {
       $sql = "UPDATE propositions SET validation = 1, date_validation = now() WHERE id = ?";
+      $this->db->query($sql, array($id));
+    }
+
+
+    public function autorise($id)
+    {
+      $sql = "UPDATE propositions SET autorisation = 1, date_autorisation = now() WHERE id = ?";
       $this->db->query($sql, array($id));
     }
 

@@ -82,6 +82,17 @@ class Admin extends CI_Controller {
 		$this->load->view('footer_admin');
 	}
 
+	public function autorise($quoi, $id)
+	{
+
+		if($quoi == 'proposition'){
+			$this->proposition->autorise($id);
+
+			redirect('admin?page=propositions');
+		}
+
+	}
+
 
 	public function supprimer($quoi, $id)
 	{
