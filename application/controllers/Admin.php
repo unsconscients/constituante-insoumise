@@ -56,24 +56,6 @@ class Admin extends CI_Controller {
 
 				$this->load->view('consulter_proposition', $proposition);
 
-			}
-
-		$this->load->view('footer_admin');
-	}
-
-
-
-	public function consulter($quoi, $id)
-	{
-		$this->load->view('header_admin');
-
-			if($quoi == 'proposition'){
-
-				$this->load->model('proposition');
-				$proposition = $this->proposition->get_proposition($id);
-
-				$this->load->view('consulter_proposition', $proposition);
-
 			} else if($quoi == 'commentaire'){
 
 			}
