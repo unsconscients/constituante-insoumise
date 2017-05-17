@@ -140,9 +140,9 @@ Class Proposition extends CI_Model {
 
 
 
-    public function valider($id)
+    public function confirmer($id)
     {
-      $sql = "UPDATE propositions SET validation = 1, date_validation = now() WHERE id = ?";
+      $sql = "UPDATE propositions SET confirmation = 1, date_confirmation = now() WHERE id = ?";
       $this->db->query($sql, array($id));
     }
 

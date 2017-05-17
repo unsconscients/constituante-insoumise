@@ -26,7 +26,7 @@
               <th>Pseudo</th>
               <th>Email</th>
               <th>Création</th>
-              <th>Validation</th>
+              <th>Confirmation</th>
               <th>Autorisation</th>
               <th></th>
             </tr>

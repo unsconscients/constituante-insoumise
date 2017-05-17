@@ -79,7 +79,7 @@ class Proposer extends CI_Controller {
 				$body = $this->load->view('email_confirmation_proposition', array(
 					'auteur_pseudo' => $proposition['auteur_pseudo'],
 					'titre' => $proposition['titre'],
-					'confirm_url' => base_url('proposer/confirm/'.$ok)
+					'confirm_url' => base_url('proposer/confirmation/'.$ok)
 				), true);
 
 				$this->email->message($body);
@@ -100,12 +100,12 @@ class Proposer extends CI_Controller {
 	}
 
 
-	public function valider($id = ''){
+	public function confirmation($id = ''){
 
 		if($id != null && $id != ''){
 
 			$this->load->model('proposition');
-			$this->proposition->valider($id);
+			$this->proposition->confirmer($id);
 
 			$this->load->view('header');
 				$this->load->view('msg_confirmation_email');
