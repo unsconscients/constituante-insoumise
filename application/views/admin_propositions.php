@@ -50,7 +50,7 @@
 
               <?php else : ?>
 
-                <td class = "text-center"><span class = "text-muted"><?php echo $prop['date_confirmation']?></span></td>
+                <td class = "text-center"><?php echo $prop['date_confirmation']?></td>
 
               <?php endif;?>
 
@@ -62,7 +62,7 @@
 
               <?php else : ?>
 
-                <td class = "text-center"><span class = "text-muted"><?php echo $prop['date_autorisation']?></span></td>
+                <td class = "text-center"><?php echo $prop['date_autorisation']?></td>
 
               <?php endif;?>
 

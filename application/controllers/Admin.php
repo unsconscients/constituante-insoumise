@@ -82,13 +82,29 @@ class Admin extends CI_Controller {
 		$this->load->view('footer_admin');
 	}
 
-	public function autorise($quoi, $id)
+	public function autorise($quoi, $id, $oui_non)
 	{
 
 		if($quoi == 'proposition'){
 
 			$this->load->model('proposition');
-			$this->proposition->autorise($id);
+
+			if($oui_non == 'oui'){
+
+				$this->proposition->autoriser($id);
+
+				// TODO
+				// MAIL
+
+			} else if($oui_non == "non"){
+
+				$this->proposition->supprimer($id);
+
+				// TODO
+				// MAIL
+
+			}
+
 
 			redirect('admin?page=propositions');
 		}

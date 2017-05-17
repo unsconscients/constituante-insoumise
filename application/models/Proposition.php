@@ -147,9 +147,16 @@ Class Proposition extends CI_Model {
     }
 
 
-    public function autorise($id)
+    public function autoriser($id)
     {
       $sql = "UPDATE propositions SET autorisation = 1, date_autorisation = now() WHERE id = ?";
+      $this->db->query($sql, array($id));
+    }
+
+
+    public function supprimer($id)
+    {
+      $sql = "DELETE FROM propositions WHERE id = ?";
       $this->db->query($sql, array($id));
     }
 
