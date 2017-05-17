@@ -4,7 +4,7 @@
 
     <div class="jumbotron jumbotron-insoumis">
 
-      <p>Votre adresse email a bien été validée !</p>
+      <p>Votre adresse email a bien été confirmée !</p>
 
       <p>Les modérateurs vont pouvoir prendre en compte votre proposition. </p>
 

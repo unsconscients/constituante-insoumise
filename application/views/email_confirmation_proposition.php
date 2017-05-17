@@ -21,9 +21,9 @@
 
       <p>Merci <b><?php echo $auteur_pseudo; ?></b> pour votre proposition !</p>
 
-      <p>Il faut maintenant que vous validiez votre email afin que les modérateurs puisse prendre en compte votre proposition.
+      <p>Il faut maintenant que vous confirmiez votre email afin que les modérateurs puisse prendre en compte votre proposition.
         Ceci permet de vérifier les emails et sensibiliser les utilisateurs de la plateforme.
-        Pour confirmer votre proposition, cliquez sur ce bouton : </p>
+        Pour confirmer votre email, cliquez sur ce bouton : </p>
 
         <div class="text-center">
           <a href = "<?php echo $confirm_url; ?>" class = "btn btn-default btn-insoumis-bleu"  >Confirmer</a>

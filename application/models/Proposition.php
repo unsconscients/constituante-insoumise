@@ -80,8 +80,8 @@ Class Proposition extends CI_Model {
             "pour" => $ligne->pour,
             "contre" => $ligne->contre,
 
-            "validation" => $ligne->validation,
-            "date_validation" => $ligne->date_validation,
+            "confirmation" => $ligne->confirmation,
+            "date_confirmation" => $ligne->date_confirmation,
             "autorisation" => $ligne->autorisation,
             "date_autorisation" => $ligne->date_autorisation
           );
@@ -124,8 +124,8 @@ Class Proposition extends CI_Model {
             "pour" => $query->row()->pour,
             "contre" => $query->row()->contre,
 
-            "validation" => $query->row()->validation,
-            "date_validation" => $query->row()->date_validation,
+            "confirmation" => $query->row()->confirmation,
+            "date_confirmation" => $query->row()->date_confirmation,
             "autorisation" => $query->row()->autorisation,
             "date_autorisation" => $query->row()->date_autorisation
           );
