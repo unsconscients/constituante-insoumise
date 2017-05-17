@@ -1,0 +1,44 @@
+html, body  {
+  height : 100%;
+}
+
+body {
+  margin : 0;
+  padding-top : 50px;
+}
+
+.container-admin{
+
+  /*Pour annuler les -71px du style principal*/
+  position: relative;
+  height : 100%;
+  position: relative;
+
+}
+
+.container-admin .table-responsive {
+  overflow: visible;
+}
+
+.sidebar-admin  {
+  position: absolute;
+  height : 100%;
+  width : 20%;
+  background-color : rgba(0, 152, 182,0.6);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.sidebar-admin > .container-fluid {
+  padding-top : 20px;
+}
+
+.content-admin  {
+  position: relative;
+  left : 20%;
+  height: 100%;
+  width : 80%;
+  background: #fff;
+
+  padding-left : 20px;
+}

@@ -21,9 +21,23 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 
+		$page = $this->input->get('page');
+
+
+
 		$this->load->view('header_admin');
 
-			$this->load->view('admin_acceuil');
+			if($page == 'propositions'){
+
+				$this->load->view('admin_propositions');
+
+			} else if ($page == 'commentaires'){
+
+				$this->load->view('admin_commentaires');
+
+			}
+
+
 
 		$this->load->view('footer_admin');
 	}
