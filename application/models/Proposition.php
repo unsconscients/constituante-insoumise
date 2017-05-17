@@ -100,7 +100,7 @@ Class Proposition extends CI_Model {
 
       try
       {
-        $sql = 'SELECT * FROM propositions WHERE valide = 1 && id = ?';
+        $sql = 'SELECT * FROM propositions WHERE valide = 1 AND id = ?';
 
         $query = $this->db->query($sql, array($id));
 
