@@ -56,7 +56,7 @@
 
               <?php // Date d'autorisation par la modération ?>
 
-              <?php if(strtotime($row['autorisation'])=='0000-00-00 00:00:00' || strtotime($row['date'])=='0000-00-00'):?>
+              <?php if($prop['autorisation'] == 0):?>
 
                 <td class = "text-center"><span class = "text-muted">n/a</span></td>
 
