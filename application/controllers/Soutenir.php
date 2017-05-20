@@ -46,7 +46,7 @@ class Soutenir extends CI_Controller {
 			if($pour_contre == 'pour' || $pour_contre == 'contre'){
 
 				if($this->session->userdata('logged') == null){
-					redirect('/users/login?erreur=Vous devez être connecté pour voter pour/contre une proposition.');
+					redirect('/users/login?erreur=Vous devez être connecté pour voter pour/contre une proposition.', 'location');
 				} else {
 					$this->load->model('proposition');
 					$this->proposition->pour_contre($id, $pour_contre);
