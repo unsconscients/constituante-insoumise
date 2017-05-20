@@ -7,7 +7,7 @@
 
       <div class="panel panel-default panel-insoumis">
         <div class="panel-heading">
-          <h3>Faites une proposition !</h3>
+          <h3 class = "panel-title">Faites une proposition !</h3>
         </div>
         <div class="panel-body">
 
