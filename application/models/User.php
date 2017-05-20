@@ -56,12 +56,10 @@ Class User extends CI_Model {
       $sql = "SELECT email FROM users WHERE email = ?";
 
       $query = $this->db->query($sql, array($email));
+      
       if($query->num_rows() > 0){
-
         $ok = false;
-
-      } else {
-
+      } else {
         $sql = "INSERT INTO users (pseudo, email, passowrd, nom, prenom, adresse, ville, code_postal) VALUES (?,?,?,?,?,?,?,?)";
 
         $this->db->query($sql, array(
@@ -77,7 +75,6 @@ Class User extends CI_Model {
         ));
 
         $ok = true;
-
       }
 
     }
