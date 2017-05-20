@@ -15,7 +15,7 @@ Class User extends CI_Model {
 
     try
     {
-      $sql = 'SELECT id, _id, pseudo, email FROM users WHERE email = ? AND password = ? AND confirm = 1';
+      $sql = 'SELECT id, _id, pseudo, email, moderateur FROM users WHERE email = ? AND password = ? AND confirm = 1';
 
       $query = $this->db->query($sql, array($email, md5($password)));
       if($query->num_rows() > 0){
@@ -25,7 +25,8 @@ Class User extends CI_Model {
           "id" => $query->row()->id,
           "_id" => $query->row()->_id,
           "pseudo" => $query->row()->pseudo,
-          "email" => $query->row()->email
+          "email" => $query->row()->email,
+          "moderateur" => $query->row()->moderateur
         ));
 
       }

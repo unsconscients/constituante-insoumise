@@ -21,28 +21,37 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 
-		$page = $this->input->get('page');
+		// Avant de continuer, on vérifie si l'utilisateur est connecté et si il est modérateur
+		if($this->session->userdata('logged') != null && $this->session->userdata('logged')['moderateur']){
 
-		$this->load->model('proposition');
+			$page = $this->input->get('page');
 
+			$this->load->model('proposition');
 
-		$this->load->view('admin/header');
+			$this->load->view('admin/header');
 
-			if($page == 'propositions'){
+				if($page == 'propositions'){
 
-				$propositions = $this->proposition->get_propositions(false);
-				$this->load->view('admin/propositions/propositions', array('propositions' => $propositions));
+					$propositions = $this->proposition->get_propositions(false);
+					$this->load->view('admin/propositions/propositions', array('propositions' => $propositions));
 
-			} else if ($page == 'commentaires'){
+				} else if ($page == 'commentaires'){
 
-				$this->load->view('admin/commentaires/commentaires');
+					$this->load->view('admin/commentaires/commentaires');
 
-			} else {
+				} else {
 
-				redirect('/admin?page=propositions');
-			}
+					redirect('/admin?page=propositions');
+					
+				}
 
-		$this->load->view('admin/footer');
+			$this->load->view('admin/footer');
+
+		} else {
+			// On le redirige vers la page de connexion
+			redirect('/users/login?erreur=Il faut avoir un compte de modérateur pour accédé à la page des modérateurs !');
+		}
+
 	}
 
 
