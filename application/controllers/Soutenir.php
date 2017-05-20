@@ -18,23 +18,12 @@ class Soutenir extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index($id = '')
+	public function index()
 	{
 
 		$this->load->model('proposition');
 
 		$this->load->view('header');
-
-		if($id != '') {
-
-			$proposition = $this->proposition->get_proposition($id);
-
-			$this->load->view('soutenir_proposition', array(
-				'proposition' => $proposition
-			));
-
-
-		} else {
 
 			$propositions = $this->proposition->get_propositions(true);
 
@@ -42,7 +31,6 @@ class Soutenir extends CI_Controller {
 				"propositions" => $propositions
 			));
 
-		}
 
 		$this->load->view('footer');
 	}
@@ -50,18 +38,26 @@ class Soutenir extends CI_Controller {
 
 	public function proposition($id = '', $pour = '')
 	{
-		if($this->session->userdata('logged') != null && $pour != ''){
 
+		$this->load->model('proposition');
+
+		if($id != '' && $this->session->userdata('logged') != null && $pour != ''){
 
 			// On a donné son email et on souhaite être pour/contre cette proposition.
-
 			$this->load->model('proposition');
 			$this->proposition->pour($id, $pour);
 
 
-		} else {
+		} else if ($id != ''){
 
-			redirect('/msg/connexion');
+			$this->load->view('header');
+				$proposition = $this->proposition->get_proposition($id);
+
+				$this->load->view('soutenir_proposition', array(
+					'proposition' => $proposition
+				));
+			$this->load->view('footer');
+
 
 
 		}
