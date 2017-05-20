@@ -71,6 +71,9 @@ Class Proposition extends CI_Model {
           ' propositions.autorisation,'.
           ' propositions.date_autorisation,'.
 
+          ' (SELECT sum(pour) FROM votes_propositions WHERE votes_propositions.id_proposition = propositions.id) as pour,'.
+          ' (SELECT sum(contre) FROM votes_propositions WHERE votes_propositions.id_proposition = propositions.id) as contre,'.
+
           ' users.pseudo as auteur_pseudo,'.
           ' users.email as auteur_email'.
 
@@ -90,6 +93,9 @@ Class Proposition extends CI_Model {
 
           ' propositions.autorisation,'.
           ' propositions.date_autorisation,'.
+
+          ' (SELECT sum(pour) FROM votes_propositions WHERE votes_propositions.id_proposition = propositions.id) as pour,'.
+          ' (SELECT sum(contre) FROM votes_propositions WHERE votes_propositions.id_proposition = propositions.id) as contre,'.
 
           ' users.pseudo as auteur_pseudo,'.
           ' users.email as auteur_email'.
@@ -151,6 +157,9 @@ Class Proposition extends CI_Model {
         ' propositions.autorisation,'.
         ' propositions.date_autorisation,'.
 
+        ' (SELECT sum(pour) FROM votes_propositions WHERE votes_propositions.id_proposition = propositions.id) as pour,'.
+        ' (SELECT sum(contre) FROM votes_propositions WHERE votes_propositions.id_proposition = propositions.id) as contre,'.
+
         ' users.pseudo as auteur_pseudo,'.
         ' users.email as auteur_email'.
 
@@ -177,16 +186,7 @@ Class Proposition extends CI_Model {
             "date_autorisation" => $query->row()->date_autorisation
           );
         }
-
-
-        // On cherche le nombre de pour et contre.
-        $sql = "SELECT sum(pour) as pour, sum(contre) as contre FROM votes_propositions WHERE id_proposition = ?";
-        $query = $this->db->query($sql, array($id));
-        if($query->num_rows() == 1){
-          $proposition['pour'] = intval($query->row()->pour);
-          $proposition['contre'] = intval($query->row()->contre);
-        }
-
+ 
         // Si l'utilisateur est connecté, on cherche ce qu'il a voté.
         if($this->session->userdata('logged') != null){
 
