@@ -14,10 +14,6 @@
 
         <?php endif; ?>
 
-        <div class="alert alert-danger" role="alert">
-          <p>Email ou mot de passe incorrect</p>
-        </div>
-
         <form action="index.html" method="post">
 
           <div class="form-group">
