@@ -2,16 +2,12 @@
 
   <div class="col-lg-8 col-lg-offset-2 col-xs-12">
 
-    <div class="jumbotron jumbotron-insoumis">
-      <h1>Faites une proposition !</h1>
-      <p>Petit text .... </p>
-    </div>
 
     <form action="<?php echo base_url('proposer/proposition')?>" method="post">
 
       <div class="panel panel-default panel-insoumis">
         <div class="panel-heading">
-          <h3 class = "panel-title">Votre Proposition</h3>
+          <h3>Faites une proposition !</h3>
         </div>
         <div class="panel-body">
 
