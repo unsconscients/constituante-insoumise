@@ -91,7 +91,7 @@ Class User extends CI_Model {
 
 				$body = $this->load->view('emails/confirmer_email', array(
 					'auteur_pseudo' => $pseudo,
-					'confirm_url' => base_url('users/confirm/'.$newId.'?email='.$email)
+					'confirm_url' => base_url('users/confirm/'.$newId.'/'.$email)
 				), true);
 
 				$this->email->message($body);
