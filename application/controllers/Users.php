@@ -114,4 +114,15 @@ class Users extends CI_Controller {
   }
 
 
+  public function confirm($id, $email)
+  {
+
+    $this->load->model('user');
+    $this->user->confirm($id, $email);
+
+
+
+  }
+
+
 }

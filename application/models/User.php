@@ -15,7 +15,7 @@ Class User extends CI_Model {
 
     try
     {
-      $sql = 'SELECT id, pseudo, email FROM users WHERE email = ? AND password = ? AND confirm = 1';
+      $sql = 'SELECT id, _id, pseudo, email FROM users WHERE email = ? AND password = ? AND confirm = 1';
 
       $query = $this->db->query($sql, array($email, md5($password)));
       if($query->num_rows() > 0){
@@ -74,6 +74,31 @@ Class User extends CI_Model {
           // Ajouter d'autres...
         ));
 
+        $newId = $this->db->insert_id();
+
+
+        $config_email = Array(
+			 		'mailtype'  => 'html',
+			 		'charset'   => 'utf-8'
+			 	);
+
+        $this->load->library('email', $config_email);
+
+				$this->email->from('accounts@lappel-presse.fr', 'Plateforme Constituante Insoumise');
+				$this->email->to($email);
+
+				$this->email->subject('Confirmez votre adresse email');
+
+				$body = $this->load->view('email_confirmation_proposition', array(
+					'auteur_pseudo' => $pseudo,
+					'confirm_url' => base_url('users/confirm/'.$newId.'?email='.$email)
+				), true);
+
+				$this->email->message($body);
+
+				$this->email->send();
+
+
         $ok = true;
       }
 
@@ -84,6 +109,25 @@ Class User extends CI_Model {
     }
 
     return $ok;
+  }
+
+
+  public function confirm($id = '', $email = '')
+  {
+    if($id != '' && $email != ''){
+
+      try
+      {
+        $sql = "UPDATE users SET confirm = 1 WHERE id = ? AND email = ?";
+        $this->db->query($sql, array($id, $email));
+
+        redirect('/users/login');
+
+      } catch (Exception $e){
+
+      }
+
+    }
   }
 
 
