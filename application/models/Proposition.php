@@ -67,6 +67,8 @@ Class Proposition extends CI_Model {
           ' propositions.contenu,'.
           ' propositions.mots_cles,'.
           ' propositions._date,'.
+          ' propositions.autorisation,'.
+          ' propositions.date_autorisation,'.
 
           ' users.pseudo as auteur_pseudo,'.
           ' users.email as auteur_email'.
@@ -84,6 +86,8 @@ Class Proposition extends CI_Model {
           ' propositions.contenu,'.
           ' propositions.mots_cles,'.
           ' propositions._date,'.
+          ' propositions.autorisation,'.
+          ' propositions.date_autorisation,'.
 
           ' users.pseudo as auteur_pseudo,'.
           ' users.email as auteur_email'.
