@@ -87,12 +87,7 @@ class Admin extends CI_Controller {
 
 					} else {
 
-						$this->load->view('admin_autoriser_proposition', array(
-							'id' => $id,
-							'oui_non' => $this->input->get('autorise')
-						));
-
-						redirect('admin');
+						redirect('admin?page=propositions');
 
 					}
 
@@ -104,7 +99,7 @@ class Admin extends CI_Controller {
 			case 'autoriser':
 
 				$this->load->view('admin/header');
-					$this->load->view('admin/autoriser_proposition');
+					$this->load->view('admin/propositions/autoriser_proposition');
 				$this->load->view('admin/footer');
 
 				break;
