@@ -47,6 +47,7 @@ footer {
 .panel-insoumis {
 
   border-color : #E06540;
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 5px;
 }
 
 .panel-insoumis > .panel-heading{
@@ -113,12 +114,6 @@ footer {
 
 
 
-.panel-proposition {
-
-  border: 1px solid #dddddd;
-  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 5px;
-
-}
 
 .panel-proposition .panel-heading {
   height: 95px;
