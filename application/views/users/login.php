@@ -90,7 +90,7 @@
 							</div>
 
 							<div class="form-group">
-								<button type="button" name="button" class = "btn btn-default btn-insoumis-rouge form-control">Connexion</button>
+								<button type="submit" name="button" class = "btn btn-default btn-insoumis-rouge form-control">Connexion</button>
 							</div>
 
 
