@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-Class users extends CI_Model {
+Class Users extends CI_Model {
 
 
     public function __construct()
@@ -52,6 +52,8 @@ Class users extends CI_Model {
         // Un utilisateur cherche à créer un compte.
 
         $this->users->signup($email, $password);
+
+        redirect();
 
 
       } else {
