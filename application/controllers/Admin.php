@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
 		$this->load->model('proposition');
 
 
-		$this->load->view('header_admin');
+		$this->load->view('admin/header');
 
 			if($page == 'propositions'){
 
@@ -39,7 +39,7 @@ class Admin extends CI_Controller {
 
 			}
 
-		$this->load->view('footer_admin');
+		$this->load->view('admin/footer');
 	}
 
 
@@ -53,25 +53,25 @@ class Admin extends CI_Controller {
 		switch ($action) {
 			case 'supprimer':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin/propositions/supprimer_proposition');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 				// break supprimer
 
 			case 'supprime':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin/propositions/supprime_proposition');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 				// break supprimer
 
 			case 'autorise':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 
 					if($this->input->get('autorise') != null && $this->input->get('autorise') != ''){
 
@@ -96,7 +96,7 @@ class Admin extends CI_Controller {
 
 					}
 
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 				// break supprimer
@@ -130,43 +130,43 @@ class Admin extends CI_Controller {
 		switch ($action) {
 			case 'supprimer':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin_supprimer_commentaire');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 				// break supprimer
 
 			case 'supprime':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin_supprime_commentaire');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 				// break supprimer
 
 			case 'autoriser':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin_autoriser_commentaire');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 				// break supprimer
 
 			case 'autorise':
 
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin_autorise_commentaire');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 
 				break;
 
 			case 'consulter':
-				$this->load->view('header_admin');
+				$this->load->view('admin/header');
 					$this->load->view('admin_consulter_commentaire');
-				$this->load->view('footer_admin');
+				$this->load->view('admin/footer');
 				break;
 		}
 
