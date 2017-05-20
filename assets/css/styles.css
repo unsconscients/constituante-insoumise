@@ -7,7 +7,7 @@ body {
 
   /*background: linear-gradient(rgba(0, 152, 182, 0.6),rgba(0, 152, 182, 0.3)),linear-gradient(rgba(0, 152, 182, 0.2),rgba(0, 152, 182, 1) 50vw, rgba(0, 152, 182, 1) 60vw);
 */
-  background-color : rgba(0, 152, 182,0.6);
+  background-color : #fff;
 
 }
 
@@ -30,7 +30,7 @@ footer {
 
 .jumbotron-insoumis{
   /*background-color : #E06540;*/
-  background-image: radial-gradient(circle farthest-corner at 50% 100% , #E06540 0%, #C7462C 100%);
+  background-color : rgba(0, 152, 182,0.6);
   color : #fff;
 }
 
