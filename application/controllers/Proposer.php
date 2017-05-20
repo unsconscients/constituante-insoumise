@@ -53,6 +53,7 @@ class Proposer extends CI_Controller {
 			$ok = $this->proposition->ajouter_propositon($proposition);
 
 			redirect('/soutenir');
+		}
 	}
 
 
