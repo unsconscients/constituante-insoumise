@@ -40,7 +40,7 @@ class Msg extends CI_Controller {
   {
 
     $this->load->view('header');
-      $this->load->view('users/msg_signup');
+      $this->load->view('users/msg_connexion');
     $this->load->view('footer');
 
   }
