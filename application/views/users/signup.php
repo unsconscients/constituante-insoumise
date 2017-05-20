@@ -14,7 +14,7 @@
 
         <?php endif; ?>
 
-        <form action="index.html" method="post">
+        <form action="<?php echo base_url('users/signup');?>" method="post">
 
           <div class="form-group">
             <label>Pseudo <small class = "text-muted">(*)</small> :</label>

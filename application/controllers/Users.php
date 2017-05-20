@@ -68,13 +68,26 @@ class Users extends CI_Controller {
 
   public function signup(){
 
-    if($this->input->post('email') != null && $this->input->post('password') != null)
+    if($this->input->post('pseudo') != null && $this->input->post('email') != null && $this->input->post('password') != null)
     {
       // Un utilisateur cherche à créer un compte.
 
-      $this->users->signup($email, $password);
+      $data = array(
+        'nom' => $this->input->post('nom'),
+        'prenom' => $this->input->post('prenom'),
+        'adresse' => $this->input->post('adresse'),
+        'ville' => $this->input->post('ville'),
+        'code_postal' => $this->input->post('code_postal')
+        // Ajouter d'autres
+      );
 
-      redirect();
+      $ok = $this->users->signup($pseudo, $email, $password, $data);
+
+      if($ok){
+        redirect('users/msg_signup');
+      } else {
+        redirect('users/singup?erreur=Erreur ! Cette adresse Email existe déjà !');
+      }
 
 
     } else {
