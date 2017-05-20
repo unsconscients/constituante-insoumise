@@ -26,7 +26,6 @@
               <th>Pseudo</th>
               <th>Email</th>
               <th>Création</th>
-              <th>Confirmation</th>
               <th>Autorisation</th>
               <th></th>
             </tr>
@@ -42,17 +41,6 @@
               <td><?php echo $prop['auteur_email']?></td>
               <td><?php echo $prop['_date']?></td>
 
-              <?php // Date de validation ?>
-
-              <?php if($prop['confirmation'] == 0):?>
-
-                <td class = "text-center"><span class = "text-muted">n/a</span></td>
-
-              <?php else : ?>
-
-                <td class = "text-center"><?php echo $prop['date_confirmation']?></td>
-
-              <?php endif;?>
 
               <?php // Date d'autorisation par la modération ?>
 
@@ -69,7 +57,7 @@
               <td class = "text-center">
 
                 <a href = "<?php echo base_url('admin/propositions/consulter/'.$prop['id']);?>" class = "btn btn-default"><span class = "glyphicon glyphicon-search"></span> Consulter</a>
-                
+
               </td>
             </tr>
 
