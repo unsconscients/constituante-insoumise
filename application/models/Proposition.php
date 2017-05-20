@@ -139,9 +139,18 @@ Class Proposition extends CI_Model {
     }
 
 
-    public function pour($id, $pour)
+    public function pour_contre($id, $pour_contre)
     {
+      $sql = '';
 
+      if($pour_contre == 'pour'){
+        $sql = "UPDATE propositions SET pour = (pour + 1) WHERE id = ?";
+      } else if($pour_contre == 'contre'){
+        $sql = "UPDATE propositions SET contre = (contre + 1) WHERE id = ?";
+      }
+
+      $this->db->query($sql , array($id));
+      
     }
 
 

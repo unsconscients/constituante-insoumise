@@ -36,17 +36,20 @@ class Soutenir extends CI_Controller {
 	}
 
 
-	public function proposition($id = '', $pour = '')
+	public function proposition($id = '', $pour_contre = '')
 	{
 
 		$this->load->model('proposition');
 
-		if($id != '' && $this->session->userdata('logged') != null && $pour != ''){
+		if($id != '' && $pour_contre != ''){
 
-			// On a donné son email et on souhaite être pour/contre cette proposition.
-			$this->load->model('proposition');
-			$this->proposition->pour($id, $pour);
-
+			if($this->session->userdata('logged') == null){
+				redirect('/users/login?erreur=Vous devez être connecté pour voter pour/contre une proposition.');
+			} else {
+				$this->load->model('proposition');
+				$this->proposition->pour_contre($id, $pour_contre);
+				redirect('/soutenir/proposition/'.$id);
+			}
 
 		} else if ($id != ''){
 
@@ -58,8 +61,8 @@ class Soutenir extends CI_Controller {
 				));
 			$this->load->view('footer');
 
-
-
+		} else {
+			redirect();
 		}
 
 
