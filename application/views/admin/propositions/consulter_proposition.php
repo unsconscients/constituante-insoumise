@@ -37,8 +37,8 @@
 
         <div class="pull-right">
 
-          <a href = "<?php echo base_url('admin/propositions/autoriser/'.$id.'?autorise=oui'); ?>" class="btn btn-success">Oui</a>
-          <a href = "<?php echo base_url('admin/propositions/autoriser/'.$id.'?autorise=non'); ?>" class="btn btn-danger">Non </a>
+          <a href = "<?php echo base_url('admin/propositions/autorise/'.$id.'?autorise=oui'); ?>" class="btn btn-success">Oui</a>
+          <a href = "<?php echo base_url('admin/propositions/autorise/'.$id.'?autorise=non'); ?>" class="btn btn-danger">Non </a>
           <a href = "" class="btn btn-default"> <span class = "glyphicon glyphicon-envelope"></span> Contacter l'auteur </a>
 
         </div>

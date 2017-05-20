@@ -14,8 +14,8 @@
 
         <div class="pull-right">
 
-          <button href = "<?php echo base_url('admin/propositions/autorise?autorise=oui'); ?>" type="button" class="btn btn-success">Oui</button>
-          <button href = "<?php echo base_url('admin/propositions/autorise?autorise=non'); ?>" type="button" class="btn btn-danger">Non</button>
+          <a href = "<?php echo base_url('admin/propositions/autorise?autorise=oui'); ?>" type="button" class="btn btn-success">Oui</a>
+          <a href = "<?php echo base_url('admin/propositions/autorise?autorise=non'); ?>" type="button" class="btn btn-danger">Non</a>
 
         </div>
 
