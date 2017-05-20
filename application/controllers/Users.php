@@ -37,7 +37,9 @@ class Users extends CI_Controller {
 
       $email = $this->input->post('email');
       $password = $this->input->post('password');
-      $this->users->login($email, $password);
+
+      $this->load->model('user');
+      $this->user->login($email, $password);
 
       redirect();
 
