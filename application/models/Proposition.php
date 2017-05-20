@@ -60,36 +60,36 @@ Class Proposition extends CI_Model {
       {
         if($aut == 1) {
           $sql = 'SELECT'.
-          'propositions.id,'.
-          'propositions._id,'.
-          'propositions.id_user,'.
-          'propositions.titre,'.
-          'propositions.contenu,'.
-          'propositions.mots_cles,'.
-          'propositions._date,'.
+          ' propositions.id,'.
+          ' propositions._id,'.
+          ' propositions.id_user,'.
+          ' propositions.titre,'.
+          ' propositions.contenu,'.
+          ' propositions.mots_cles,'.
+          ' propositions._date,'.
 
-          'users.pseudo as auteur_pseudo,'.
-          'users.email as auteur_email'.
+          ' users.pseudo as auteur_pseudo,'.
+          ' users.email as auteur_email'.
 
-          'FROM propositions'.
-          'JOIN users ON users.id = propositions.id_user'.
-          'WHERE propositions.autorisation = 1';
+          ' FROM propositions'.
+          ' JOIN users ON users.id = propositions.id_user'.
+          ' WHERE propositions.autorisation = 1';
 
         } else {
           $sql = 'SELECT'.
-          'propositions.id,'.
-          'propositions._id,'.
-          'propositions.id_user,'.
-          'propositions.titre,'.
-          'propositions.contenu,'.
-          'propositions.mots_cles,'.
-          'propositions._date,'.
+          ' propositions.id,'.
+          ' propositions._id,'.
+          ' propositions.id_user,'.
+          ' propositions.titre,'.
+          ' propositions.contenu,'.
+          ' propositions.mots_cles,'.
+          ' propositions._date,'.
 
-          'users.pseudo as auteur_pseudo,'.
-          'users.email as auteur_email'.
+          ' users.pseudo as auteur_pseudo,'.
+          ' users.email as auteur_email'.
 
-          'FROM propositions'.
-          'JOIN users ON users.id = propositions.id_user';
+          ' FROM propositions'.
+          ' JOIN users ON users.id = propositions.id_user';
         }
 
 
@@ -134,20 +134,20 @@ Class Proposition extends CI_Model {
       {
 
         $sql = 'SELECT'.
-        'propositions.id,'.
-        'propositions._id,'.
-        'propositions.id_user,'.
-        'propositions.titre,'.
-        'propositions.contenu,'.
-        'propositions.mots_cles,'.
-        'propositions._date,'.
+        ' propositions.id,'.
+        ' propositions._id,'.
+        ' propositions.id_user,'.
+        ' propositions.titre,'.
+        ' propositions.contenu,'.
+        ' propositions.mots_cles,'.
+        ' propositions._date,'.
 
-        'users.pseudo as auteur_pseudo,'.
-        'users.email as auteur_email'.
+        ' users.pseudo as auteur_pseudo,'.
+        ' users.email as auteur_email'.
 
-        'FROM propositions'.
-        'JOIN users ON users.id = propositions.id_user'.
-        'WHERE propositions.id = ?';
+        ' FROM propositions'.
+        ' JOIN users ON users.id = propositions.id_user'.
+        ' WHERE propositions.id = ?';
 
         $query = $this->db->query($sql, array($id));
 
