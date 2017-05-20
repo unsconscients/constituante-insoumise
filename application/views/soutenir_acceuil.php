@@ -18,7 +18,7 @@
 
                     <div class="media">
 
-                      <a href="#" class="pull-left"> <img src="https://www.gravatar.com/avatar/'.$prop['gravatar_hash'].'" class="media-photo"> </a>
+                      <a href="#" class="pull-left"> <img src="<?php echo 'https://www.gravatar.com/avatar/'.$prop['gravatar_hash']; ?>" class="media-photo"> </a>
                       <div class="media-body">
                         <span class="media-meta pull-right"><?php echo $prop['_date']; ?></span>
                         <h4 class="title">
