@@ -37,7 +37,6 @@ class Users extends CI_Controller {
 
       $email = $this->input->post('email');
       $password = $this->input->post('password');
-
       $this->users->login($email, $password);
 
       redirect();
@@ -46,9 +45,14 @@ class Users extends CI_Controller {
 
       // On affiche la page de connexion
 
+      $erreur = '';
+      if($this->input->get('erreur') != null){
+        $erreur = $this->input->get('erreur') ;
+      }
+
       $this->load->view('header');
 
-  			$this->load->view('users/login');
+  			$this->load->view('users/login', array('erreur' => $erreur));
 
   		$this->load->view('footer');
 
