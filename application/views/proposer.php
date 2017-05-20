@@ -15,12 +15,16 @@
         </div>
         <div class="panel-body">
           <div class="form-group">
+            <label>Id</label>
+            <p> <?php echo $id; ?></p>
+          </div>
+          <div class="form-group">
             <label>Pseudo</label>
-            <input type="text" name="pseudo" class = "form-control">
+            <p> <?php echo $pseudo; ?></p>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="text" name="email" class = "form-control">
+            <p><?php echo $email; ?></p>>
           </div>
         </div>
       </div>

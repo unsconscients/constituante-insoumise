@@ -23,7 +23,7 @@ class Proposer extends CI_Controller {
 
 		$this->load->view('header');
 
-			$this->load->view('proposer');
+			$this->load->view('proposer', $this->session->userdata('logged'));
 
 		$this->load->view('footer');
 	}
