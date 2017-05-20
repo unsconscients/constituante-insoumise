@@ -87,7 +87,7 @@ class Users extends CI_Controller {
       }
 
       $this->load->view('header');
-        $this->load->view('users/signup', $erreur);
+        $this->load->view('users/signup', array('erreur' => $erreur));
       $this->load->view('footer');
     }
 
