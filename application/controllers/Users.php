@@ -66,7 +66,8 @@ class Users extends CI_Controller {
   public function logout()
   {
 
-    $this->users->logout();
+    $this->load->model('user');
+    $this->user->logout();
 
   }
 
