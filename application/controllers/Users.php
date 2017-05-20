@@ -68,6 +68,7 @@ class Users extends CI_Controller {
 
   public function signup(){
 
+
     if($this->input->post('pseudo') != null && $this->input->post('email') != null && $this->input->post('password') != null)
     {
       // Un utilisateur cherche à créer un compte.
@@ -81,6 +82,7 @@ class Users extends CI_Controller {
         // Ajouter d'autres
       );
 
+      $this->load->model('users');
       $ok = $this->users->signup($pseudo, $email, $password, $data);
 
       if($ok){
