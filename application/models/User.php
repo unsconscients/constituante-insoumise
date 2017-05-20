@@ -56,7 +56,7 @@ Class User extends CI_Model {
       $sql = "SELECT email FROM users WHERE email = ?";
 
       $query = $this->db->query($sql, array($email));
-      
+
       if($query->num_rows() > 0){
         $ok = false;
       } else {
