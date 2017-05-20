@@ -114,6 +114,11 @@ footer {
 
 
 
+.panel-proposition {
+
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 5px;
+  
+}
 
 .panel-proposition .panel-heading {
   height: 95px;
