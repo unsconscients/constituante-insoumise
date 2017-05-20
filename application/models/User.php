@@ -118,7 +118,7 @@ Class User extends CI_Model {
 
     try
     {
-      $sql = "UPDATE users SET confirm = 1 WHERE md5(id) = ? AND email = ?";
+      $sql = "UPDATE users SET confirm = 1 WHERE md5(id) = ?";
       $this->db->query($sql, array($md5_id));
 
 
