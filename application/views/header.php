@@ -43,7 +43,7 @@
 
           <ul class = "nav navbar-nav">
 
-            <li><a href="<?php echo base_url(); ?>" class = "navbar-insoumis-titre" style = "font-family: 'Courgette'">Pour une 6ème république citoyenne et démocratique, donnez votre avis !</a></li>
+            <li><a href="<?php echo base_url(); ?>" class = "navbar-insoumis-titre">Pour une 6ème république citoyenne et démocratique, donnez votre avis !</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
