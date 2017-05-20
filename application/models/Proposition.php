@@ -147,10 +147,10 @@ Class Proposition extends CI_Model {
     }
 
 
-    public function autoriser($id)
+    public function autorise($id, $autorise)
     {
-      $sql = "UPDATE propositions SET autorisation = 1, date_autorisation = now() WHERE id = ?";
-      $this->db->query($sql, array($id));
+      $sql = "UPDATE propositions SET autorisation = ?, date_autorisation = now() WHERE id = ?";
+      $this->db->query($sql, array($autorise, $id));
     }
 
 

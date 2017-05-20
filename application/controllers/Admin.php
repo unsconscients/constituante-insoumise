@@ -26,17 +26,16 @@ class Admin extends CI_Controller {
 		$this->load->model('proposition');
 
 
-
 		$this->load->view('header_admin');
 
 			if($page == 'propositions'){
 
 				$propositions = $this->proposition->get_propositions(false);
-				$this->load->view('admin_propositions', array('propositions' => $propositions));
+				$this->load->view('admin/propositions/propositions', array('propositions' => $propositions));
 
 			} else if ($page == 'commentaires'){
 
-				$this->load->view('admin_commentaires');
+				$this->load->view('admin/commentaires/commentaires');
 
 			}
 
@@ -45,89 +44,133 @@ class Admin extends CI_Controller {
 
 
 
-	public function consulter($quoi, $id)
-	{
-		$this->load->view('header_admin');
 
-			if($quoi == 'proposition'){
-
-				$this->load->model('proposition');
-				$proposition = $this->proposition->get_proposition($id);
-
-				$this->load->view('admin_consulter_proposition', $proposition);
-
-			} else if($quoi == 'commentaire'){
-
-			}
-
-		$this->load->view('footer_admin');
-	}
-
-
-	public function autoriser($quoi, $id)
-	{
-		$this->load->view('header_admin');
-
-			if($quoi == 'proposition'){
-
-				$this->load->model('proposition');
-				$proposition = $this->proposition->get_proposition($id);
-
-				$this->load->view('autoriser_proposition', $proposition);
-
-			} else if($quoi == 'commentaire'){
-
-			}
-
-		$this->load->view('footer_admin');
-	}
-
-	public function autorise($quoi, $id, $oui_non)
+ function propositions($action = '', $id = '')
 	{
 
-		if($quoi == 'proposition'){
+		$this->load->model('proposition');
 
-			$this->load->model('proposition');
+		switch ($action) {
+			case 'supprimer':
 
-			if($oui_non == 'oui'){
+				$this->load->view('header_admin');
+					$this->load->view('admin/propositions/supprimer_proposition');
+				$this->load->view('footer_admin');
 
-				$this->proposition->autoriser($id);
+				break;
+				// break supprimer
 
-				// TODO
-				// MAIL
+			case 'supprime':
 
-			} else if($oui_non == "non"){
+				$this->load->view('header_admin');
+					$this->load->view('admin/propositions/supprime_proposition');
+				$this->load->view('footer_admin');
 
-				$this->proposition->supprimer($id);
+				break;
+				// break supprimer
 
-				// TODO
-				// MAIL
+			case 'autorise':
 
-			}
+				$this->load->view('header_admin');
 
+					if($this->input->get('autorise') != null && $this->input->get('autorise') != ''){
 
-			redirect('admin?page=propositions');
+						if($this->input->get('autorise') == 'oui'){
+
+							$this->proposition->autorise($id, 1);
+
+						} else if($this->input->get('autorise') == 'non'){
+
+							$this->proposition->autorise($id, 0);
+
+						}
+
+					} else {
+
+						$this->load->view('admin_autoriser_proposition', array(
+							'id' => $id,
+							'oui_non' => $this->input->get('autorise')
+						));
+
+						redirect('admin');
+
+					}
+
+				$this->load->view('footer_admin');
+
+				break;
+				// break supprimer
+
+			case 'autoriser':
+
+				$this->load->view('admin/header');
+					$this->load->view('admin/autoriser_proposition');
+				$this->load->view('admin/footer');
+
+				break;
+
+			case 'consulter':
+				$this->load->view('admin/header');
+
+					$proposition = $this->proposition->get_proposition($id);
+
+					$this->load->view('admin/propositions/consulter_proposition', $proposition);
+
+				$this->load->view('admin/footer');
+				break;
 		}
 
+
 	}
 
 
-	public function supprimer($quoi, $id)
+
+	public function commentaires($action, $id)
 	{
-		$this->load->view('header_admin');
+		switch ($action) {
+			case 'supprimer':
 
-			if($quoi == 'proposition'){
+				$this->load->view('header_admin');
+					$this->load->view('admin_supprimer_commentaire');
+				$this->load->view('footer_admin');
 
-				$this->load->model('proposition');
-				$proposition = $this->proposition->get_proposition($id);
+				break;
+				// break supprimer
 
-				$this->load->view('supprimer_proposition', $proposition);
+			case 'supprime':
 
-			} else if($quoi == 'commentaire'){
+				$this->load->view('header_admin');
+					$this->load->view('admin_supprime_commentaire');
+				$this->load->view('footer_admin');
 
-			}
+				break;
+				// break supprimer
 
-		$this->load->view('footer_admin');
+			case 'autoriser':
+
+				$this->load->view('header_admin');
+					$this->load->view('admin_autoriser_commentaire');
+				$this->load->view('footer_admin');
+
+				break;
+				// break supprimer
+
+			case 'autorise':
+
+				$this->load->view('header_admin');
+					$this->load->view('admin_autorise_commentaire');
+				$this->load->view('footer_admin');
+
+				break;
+
+			case 'consulter':
+				$this->load->view('header_admin');
+					$this->load->view('admin_consulter_commentaire');
+				$this->load->view('footer_admin');
+				break;
+		}
+
+
 	}
 
 
