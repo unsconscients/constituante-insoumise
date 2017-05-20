@@ -41,31 +41,31 @@ class Soutenir extends CI_Controller {
 
 		$this->load->model('proposition');
 
-		if($id != '' && $pour_contre != ''){
+		if($id != ''){
 
-			if($this->session->userdata('logged') == null){
-				redirect('/users/login?erreur=Vous devez être connecté pour voter pour/contre une proposition.');
+			if($pour_contre == 'pour' || $pour_contre == 'contre'){
+
+				if($this->session->userdata('logged') == null){
+					redirect('/users/login?erreur=Vous devez être connecté pour voter pour/contre une proposition.');
+				} else {
+					$this->load->model('proposition');
+					$this->proposition->pour_contre($id, $pour_contre);
+					redirect('/soutenir/proposition/'.$id);
+				}
+
 			} else {
-				$this->load->model('proposition');
-				$this->proposition->pour_contre($id, $pour_contre);
-				redirect('/soutenir/proposition/'.$id);
+				$this->load->view('header');
+					$proposition = $this->proposition->get_proposition($id);
+
+					$this->load->view('soutenir_proposition', array(
+						'proposition' => $proposition
+					));
+				$this->load->view('footer');
 			}
-
-		} else if ($id != ''){
-
-			$this->load->view('header');
-				$proposition = $this->proposition->get_proposition($id);
-
-				$this->load->view('soutenir_proposition', array(
-					'proposition' => $proposition
-				));
-			$this->load->view('footer');
 
 		} else {
 			redirect();
 		}
-
-
 
 	}
 

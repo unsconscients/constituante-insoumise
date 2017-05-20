@@ -121,8 +121,6 @@ Class Proposition extends CI_Model {
             "mots_cles" => $query->row()->mots_cles,
             "contenu" => $query->row()->contenu,
             "_date" => $query->row()->_date,
-            "pour" => $query->row()->pour,
-            "contre" => $query->row()->contre,
 
             "confirmation" => $query->row()->confirmation,
             "date_confirmation" => $query->row()->date_confirmation,
@@ -130,6 +128,35 @@ Class Proposition extends CI_Model {
             "date_autorisation" => $query->row()->date_autorisation
           );
         }
+
+
+        // On cherche le nombre de pour et contre.
+        $sql = "SELECT sum(pour) as pour, sum(contre) as contre FROM votes_propositions WHERE id_proposition = ?";
+        $query = $this->db->query($sql, array($id));
+        if($query->num_rows() == 1){
+          $proposition['pour'] = intval($query->row()->pour);
+          $proposition['contre'] = intval($query->row()->contre);
+        }
+
+        // Si l'utilisateur est connecté, on cherche ce qu'il a voté.
+        if($this->session->userdata('logged') != null){
+
+          $proposition['vote_user_pour'] = 0;
+          $proposition['vote_user_contre'] = 0;
+
+          $sql = "SELECT pour, contre FROM votes_propositions WHERE id_proposition = ? AND id_user = ?";
+          $query = $this->db->query($sql, array(
+            intval($id),
+            intval($this->session->userdata('logged')['id'])
+          ));
+          if($query->num_rows() == 1){
+
+            $proposition['vote_user_pour'] = $query->row()->pour;
+            $proposition['vote_user_contre'] = $query->row()->contre;
+
+          }
+        }
+
 
       }
       catch( Exception $e ) { }
@@ -141,16 +168,31 @@ Class Proposition extends CI_Model {
 
     public function pour_contre($id, $pour_contre)
     {
-      $sql = '';
+      $sql = 'SELECT id FROM votes_propositions WHERE id_proposition = ? AND id_user = ?';
+      $query = $this->db->query($sql, array(
+        $id,
+        intval($this->session->userdata('logged')['id'])
+      ));
 
-      if($pour_contre == 'pour'){
-        $sql = "UPDATE propositions SET pour = (pour + 1) WHERE id = ?";
-      } else if($pour_contre == 'contre'){
-        $sql = "UPDATE propositions SET contre = (contre + 1) WHERE id = ?";
+      if($query->num_rows() > 0){
+        // Cet utilisateur a déjà voté
+
+      } else {
+
+        if($pour_contre == 'pour'){
+          $sql = "INSERT INTO votes_propositions (id_proposition, id_user, pour, contre) VALUES (?,?,1,0)";
+        } else if($pour_contre == 'contre'){
+          $sql = "INSERT INTO votes_propositions (id_proposition, id_user, pour, contre) VALUES (?,?,0,1)";
+        }
+
+        $this->db->query($sql, array(
+          $id,
+          intval($this->session->userdata('logged')['id'])
+        ));
+
       }
 
-      $this->db->query($sql , array($id));
-      
+
     }
 
 
