@@ -67,16 +67,9 @@
               <?php endif;?>
 
               <td class = "text-center">
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <span class="caret"></span> </button>
-                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                    <li><a href="<?php echo base_url('admin/propositions/consulter/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-search"></span> Consulter</a></li>
-                    <li><a href="<?php echo base_url('admin/propositions/autoriser/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-ok"></span> Autoriser</a></li>
-                    <li><a href="<?php echo base_url('admin/propositions/supprimer/'.$prop['id']); ?>"><span class = "glyphicon glyphicon-remove"></span> Supprimer</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#"><span class = "glyphicon glyphicon-envelope"></span> Contacter l'auteur</a></li>
-                  </ul>
-                </div>
+
+                <a href = "<?php echo base_url('admin/propositions/consulter/'.$prop['id']);?>" class = "btn btn-default"><span class = "glyphicon glyphicon-search"></span> Consulter</a>
+                
               </td>
             </tr>
 
