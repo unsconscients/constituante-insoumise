@@ -114,13 +114,13 @@ class Users extends CI_Controller {
   }
 
 
-  public function confirm($id, $email)
+  public function confirm($md5_id = '')
   {
 
     $this->load->model('user');
     $this->user->confirm($id, $email);
 
-
+    redirect('/users/login');
 
   }
 

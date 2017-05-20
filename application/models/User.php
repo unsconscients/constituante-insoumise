@@ -112,22 +112,21 @@ Class User extends CI_Model {
   }
 
 
-  public function confirm($md5_id = '')
+  public function confirm($md5_id)
   {
-    if($md5_id != ''){
 
-      try
-      {
-        $sql = "UPDATE users SET confirm = 1 WHERE md5(id) = ? AND email = ?";
-        $this->db->query($sql, array($md5_id));
 
-        redirect('/users/login');
+    try
+    {
+      $sql = "UPDATE users SET confirm = 1 WHERE md5(id) = ? AND email = ?";
+      $this->db->query($sql, array($md5_id));
 
-      } catch (Exception $e){
 
-      }
+    } catch (Exception $e){
 
     }
+
+
   }
 
 
