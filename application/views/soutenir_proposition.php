@@ -36,8 +36,8 @@
 
         <div class="pull-right">
 
-          <a href = "<?php echo ""?>" class="btn btn-success"><span class = "fa fa-thumbs-up"></span> <?php echo $proposition['pour']?></a>
-          <a class="btn btn-danger"><span class = "fa fa-thumbs-down"></span> <?php echo $proposition['contre']?> </a>
+          <a href = "<?php echo base_url('/soutenir/proposition/'.$proposition['id'].'/pour'); ?>" class="btn btn-success"><span class = "fa fa-thumbs-up"></span> <?php echo $proposition['pour']?></a>
+          <a href = "<?php echo base_url('/soutenir/proposition/'.$proposition['id'].'/contre'); ?>" class="btn btn-danger"><span class = "fa fa-thumbs-down"></span> <?php echo $proposition['contre']?> </a>
 
         </div>
 
