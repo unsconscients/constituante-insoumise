@@ -37,12 +37,12 @@
         <div class="pull-right">
 
           <a href = "<?php echo base_url('/soutenir/proposition/'.$proposition['id'].'/pour'); ?>" class="btn btn-success"><span class = "fa fa-thumbs-up"></span> <?php echo $proposition['pour']?>
-            <?php if($proposition['vote_user_pour'] != null && $proposition['vote_user_pour'] == 1) : ?>
+            <?php if(isset($proposition['vote_user_pour']) && $proposition['vote_user_pour'] != null && $proposition['vote_user_pour'] == 1) : ?>
               <small>(vous)</small>
             <?php endif;?>
           </a>
           <a href = "<?php echo base_url('/soutenir/proposition/'.$proposition['id'].'/contre'); ?>" class="btn btn-danger"><span class = "fa fa-thumbs-down"></span> <?php echo $proposition['contre']?>
-            <?php if($proposition['vote_user_contre'] != null && $proposition['vote_user_contre'] == 1) : ?>
+            <?php if(isset($proposition['vote_user_contre']) && $proposition['vote_user_contre'] != null && $proposition['vote_user_contre'] == 1) : ?>
               <small>(vous)</small>
             <?php endif;?>
           </a>
