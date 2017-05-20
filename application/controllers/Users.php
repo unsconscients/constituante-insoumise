@@ -118,7 +118,7 @@ class Users extends CI_Controller {
   {
 
     $this->load->model('user');
-    $this->user->confirm($id, $email);
+    $this->user->confirm($md5_id);
 
     redirect('/users/login');
 
