@@ -28,10 +28,13 @@ class Proposer extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function propose()
+	public function proposition()
 	{
 
-		if($this->input->post('pseudo') != null && $this->input->post('email') != null){
+		if($this->session->userdata('logged') != null &&
+			$this->input->post('titre') != null &&
+			$this->input->post('mots') != null &&
+			$this->input->post('contenu') != null){
 
 			// On a au moins des coordonnés, on continue...
 			// On part également du principe que toutes les inputs du formulaire
@@ -40,8 +43,7 @@ class Proposer extends CI_Controller {
 			$this->load->model('proposition');
 
 			$proposition = array(
-				"auteur_pseudo" => $this->input->post('pseudo'),
-				"auteur_email" => $this->input->post('email'),
+				"id_user" => $this->session->userdata('logged')['id'],
 
 				"titre" => $this->input->post('titre'),
 				"mots_cles" => $this->input->post('mots'),

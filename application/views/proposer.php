@@ -7,31 +7,11 @@
       <p>Petit text .... </p>
     </div>
 
-    <form action="<?php echo base_url('proposer/propose')?>" method="post">
+    <form action="<?php echo base_url('proposer/proposition')?>" method="post">
 
       <div class="panel panel-default panel-insoumis">
         <div class="panel-heading">
-          <h3 class = "panel-title">Coordonnés</h3>
-        </div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label>Id</label>
-            <p> <?php echo $id; ?></p>
-          </div>
-          <div class="form-group">
-            <label>Pseudo</label>
-            <p> <?php echo $pseudo; ?></p>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <p><?php echo $email; ?></p>>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel panel-default panel-insoumis">
-        <div class="panel-heading">
-          <h3 class = "panel-title">Proposition</h3>
+          <h3 class = "panel-title">Votre Proposition</h3>
         </div>
         <div class="panel-body">
 

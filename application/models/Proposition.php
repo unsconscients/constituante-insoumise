@@ -17,11 +17,10 @@ Class Proposition extends CI_Model {
 
       try
       {
-        $sql = 'INSERT INTO propositions (auteur_pseudo, auteur_email, titre, mots_cles, contenu, _date ) VALUES (?,?,?,?,?, now() )';
+        $sql = 'INSERT INTO propositions (id_user, titre, mots_cles, contenu, _date ) VALUES (?,?,?,?, now() )';
 
         $this->db->query($sql, array(
-          $array['auteur_pseudo'],
-          $array['auteur_email'],
+          $array['id_user'],
 
           $array['titre'],
           $array['mots_cles'],
@@ -46,6 +45,9 @@ Class Proposition extends CI_Model {
     public function get_propositions($autorisation)
     {
 
+
+
+
       $propositions = array();
 
       // Conversion de boolean en integer (on ne sait jamais !)
@@ -57,9 +59,37 @@ Class Proposition extends CI_Model {
       try
       {
         if($aut == 1) {
-          $sql = 'SELECT * FROM propositions WHERE autorisation = 1';
+          $sql = 'SELECT'.
+          'propositions.id,'.
+          'propositions._id,'.
+          'propositions.id_user,'.
+          'propositions.titre,'.
+          'propositions.contenu,'.
+          'propositions.mots_cles,'.
+          'propositions._date,'.
+
+          'users.pseudo as auteur_pseudo,'.
+          'users.email as auteur_email'.
+
+          'FROM propositions'.
+          'JOIN users ON users.id = propositions.id_user'.
+          'WHERE propositions.autorisation = 1';
+
         } else {
-          $sql = 'SELECT * FROM propositions';
+          $sql = 'SELECT'.
+          'propositions.id,'.
+          'propositions._id,'.
+          'propositions.id_user,'.
+          'propositions.titre,'.
+          'propositions.contenu,'.
+          'propositions.mots_cles,'.
+          'propositions._date,'.
+
+          'users.pseudo as auteur_pseudo,'.
+          'users.email as auteur_email'.
+
+          'FROM propositions'.
+          'JOIN users ON users.id = propositions.id_user';
         }
 
 
@@ -69,19 +99,16 @@ Class Proposition extends CI_Model {
           $proposition = array(
             "id" => $ligne->id,
             "_id" => $ligne->_id,
-            "auteur_pseudo" => $ligne->auteur_pseudo,
-            "auteur_email" => $ligne->auteur_email,
+            "auteur_pseudo" => $query->row()->auteur_pseudo,
+            "auteur_email" => $query->row()->auteur_email,
+            "id_user" => $ligne->id_user,
             "gravatar_hash" => md5($ligne->auteur_email),
 
             "titre" => $ligne->titre,
             "mots_cles" => $ligne->mots_cles,
             "contenu" => $ligne->contenu,
             "_date" => $ligne->_date,
-            "pour" => $ligne->pour,
-            "contre" => $ligne->contre,
 
-            "confirmation" => $ligne->confirmation,
-            "date_confirmation" => $ligne->date_confirmation,
             "autorisation" => $ligne->autorisation,
             "date_autorisation" => $ligne->date_autorisation
           );
@@ -105,7 +132,22 @@ Class Proposition extends CI_Model {
 
       try
       {
-        $sql = 'SELECT * FROM propositions WHERE id = ?';
+
+        $sql = 'SELECT'.
+        'propositions.id,'.
+        'propositions._id,'.
+        'propositions.id_user,'.
+        'propositions.titre,'.
+        'propositions.contenu,'.
+        'propositions.mots_cles,'.
+        'propositions._date,'.
+
+        'users.pseudo as auteur_pseudo,'.
+        'users.email as auteur_email'.
+
+        'FROM propositions'.
+        'JOIN users ON users.id = propositions.id_user'.
+        'WHERE propositions.id = ?';
 
         $query = $this->db->query($sql, array($id));
 
