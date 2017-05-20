@@ -91,7 +91,7 @@ Class User extends CI_Model {
 
 				$body = $this->load->view('emails/confirmer_email', array(
 					'auteur_pseudo' => $pseudo,
-					'confirm_url' => base_url('users/confirm/'.$newId.'/'.$email)
+					'confirm_url' => base_url('users/confirm/'.md5($newId))
 				), true);
 
 				$this->email->message($body);
@@ -112,14 +112,14 @@ Class User extends CI_Model {
   }
 
 
-  public function confirm($id = '', $email = '')
+  public function confirm($md5_id = '')
   {
-    if($id != '' && $email != ''){
+    if($md5_id != ''){
 
       try
       {
-        $sql = "UPDATE users SET confirm = 1 WHERE id = ? AND email = ?";
-        $this->db->query($sql, array($id, $email));
+        $sql = "UPDATE users SET confirm = 1 WHERE md5(id) = ? AND email = ?";
+        $this->db->query($sql, array($md5_id));
 
         redirect('/users/login');
 
