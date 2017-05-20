@@ -139,6 +139,12 @@ Class Proposition extends CI_Model {
     }
 
 
+    public function pour($id, $pour)
+    {
+
+    }
+
+
 
     public function confirmer($id)
     {
