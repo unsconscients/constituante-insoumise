@@ -2,6 +2,15 @@
   Les styles de la plateforme constituante insoumise !
 **/
 
+
+@font-face {
+    font-family: Courgette;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/courgette-v4-latin-regular.woff2) format("woff2");
+}
+
+
 body {
   margin-top : 71px;
 
@@ -33,7 +42,9 @@ footer {
   background-color :  #0098b6;
   color : #fff;
 }
-
+.jumbotron-insoumis > h1 {
+  font-family: Courgette, cursive;
+}
 
 .panel-insoumis {
 
