@@ -35,4 +35,14 @@ class Msg extends CI_Controller {
 
   }
 
+
+	public function connexion()
+  {
+
+    $this->load->view('header');
+      $this->load->view('users/msg_signup');
+    $this->load->view('footer');
+
+  }
+
 }

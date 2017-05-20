@@ -48,29 +48,20 @@ class Soutenir extends CI_Controller {
 	}
 
 
-	public function proposition($id = '', $pour_contre = '')
+	public function proposition($id = '', $pour = '')
 	{
-		if($this->input->post('email') != null && $this->input->post('email') != ''){
+		if($this->session->userdata('logged') != null && $pour != ''){
+
 
 			// On a donné son email et on souhaite être pour/contre cette proposition.
 
 			$this->load->model('proposition');
-			$proposition = $this->proposition->pour($id, $this->input->post('pseudo'));
+			$this->proposition->pour($id, $pour);
 
 
 		} else {
 
-			// Message pour obtenir l'email avant de continuer.
-
-			$this->load->view('header');
-
-
-
-				$this->load->view('soutenir_proposition', array(
-					'proposition' => $proposition
-				));
-
-			$this->load->view('footer');
+			redirect('/msg/connexion');
 
 
 		}
