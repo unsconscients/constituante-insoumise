@@ -41,11 +41,6 @@
             <input type="text" name="prenom" class = "form-control">
           </div>
 
-          <div class="form-group">
-            <label>Adresse :</label>
-            <input type="text" name="adresse" class = "form-control">
-          </div>
-
           <div class="row">
             <div class="col-xs-8">
               <div class="form-group">

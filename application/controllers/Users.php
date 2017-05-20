@@ -83,7 +83,6 @@ class Users extends CI_Controller {
       $data = array(
         'nom' => $this->input->post('nom'),
         'prenom' => $this->input->post('prenom'),
-        'adresse' => $this->input->post('adresse'),
         'ville' => $this->input->post('ville'),
         'code_postal' => $this->input->post('code_postal')
         // Ajouter d'autres
