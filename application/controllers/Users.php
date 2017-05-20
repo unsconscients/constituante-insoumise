@@ -82,8 +82,8 @@ class Users extends CI_Controller {
         // Ajouter d'autres
       );
 
-      $this->load->model('users');
-      $ok = $this->users->signup($pseudo, $email, $password, $data);
+      $this->load->model('user');
+      $ok = $this->user->signup($pseudo, $email, $password, $data);
 
       if($ok){
         redirect('users/msg_signup');
