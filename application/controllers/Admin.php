@@ -79,11 +79,16 @@ class Admin extends CI_Controller {
 
 							$this->proposition->autorise($id, 1);
 
+							redirect('admin?page=propositions');
+
 						} else if($this->input->get('autorise') == 'non'){
 
 							$this->proposition->autorise($id, 0);
 
+							redirect('admin?page=propositions');
+
 						}
+
 
 					} else {
 
