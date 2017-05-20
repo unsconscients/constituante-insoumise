@@ -28,7 +28,6 @@ class Msg extends CI_Controller {
 
   public function signup()
   {
-
     $this->load->view('header');
       $this->load->view('users/msg_signup');
     $this->load->view('footer');
@@ -38,11 +37,17 @@ class Msg extends CI_Controller {
 
 	public function connexion()
   {
-
     $this->load->view('header');
       $this->load->view('users/msg_connexion');
     $this->load->view('footer');
 
   }
+
+	public function ajouter_proposition()
+	{
+		$this->load->view('header');
+      $this->load->view('propositions/msg_ajouter_proposition', $this->session->userdata('logged'));
+    $this->load->view('footer');
+	}
 
 }
