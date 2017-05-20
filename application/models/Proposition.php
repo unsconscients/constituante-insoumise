@@ -168,8 +168,6 @@ Class Proposition extends CI_Model {
             "contenu" => $query->row()->contenu,
             "_date" => $query->row()->_date,
 
-            "confirmation" => $query->row()->confirmation,
-            "date_confirmation" => $query->row()->date_confirmation,
             "autorisation" => $query->row()->autorisation,
             "date_autorisation" => $query->row()->date_autorisation
           );
