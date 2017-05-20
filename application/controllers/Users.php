@@ -60,15 +60,36 @@ class Users extends CI_Controller {
   public function logout()
   {
 
+    $this->users->logout();
 
   }
 
 
 
-  public function signup()
-  {
+  public function signup(){
+
+    if($this->input->post('email') != null && $this->input->post('password') != null)
+    {
+      // Un utilisateur cherche à créer un compte.
+
+      $this->users->signup($email, $password);
+
+      redirect();
 
 
+    } else {
+
+      // On affiche la page de création de compte.
+
+      $erreur = '';
+      if($this->input->get('erreur') != null){
+        $erreur = $this->input->get('erreur') ;
+      }
+
+      $this->load->view('header');
+        $this->load->view('users/signup', $erreur);
+      $this->load->view('footer');
+    }
 
   }
 

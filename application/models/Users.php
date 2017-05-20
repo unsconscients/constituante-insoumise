@@ -45,33 +45,6 @@ Class Users extends CI_Model {
     }
 
 
-    public function signup(){
-
-      if($this->input->post('email') != null && $this->input->post('password') != null)
-      {
-        // Un utilisateur cherche à créer un compte.
-
-        $this->users->signup($email, $password);
-
-        redirect();
-
-
-      } else {
-
-        // On affiche la page de création de compte.
-
-        $erreur = '';
-        if($this->input->get('erreur') != null){
-          $erreur = $this->input->get('erreur') ;
-        }
-
-        $this->load->view('header');
-          $this->load->view('users/signup', $erreur);
-        $this->load->view('footer');
-      }
-
-    }
-
 
     // Si $autorisation == false on montre TOUTES les proposition (admin)
     // Sinon on ne montre que les autorisées par les modérateurs.
