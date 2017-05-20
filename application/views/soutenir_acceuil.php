@@ -1,44 +1,43 @@
 <div class="container">
 
-  <div class="jumbotron jumbotron-insoumis">
-    <h1>Voici les dernières propositions</h1>
-    <p> Blah ....</p>
-  </div>
-
-
   <div class="col-lg-8 col-lg-offset-2 col-xs-12">
 
     <div class="panel panel-default panel-insoumis">
+      <div class="panel-heading">
+        <h3 class = "panel-title">Les dernières propositions !</h3>
+      </div>
       <div class="panel-body">
 
         <div class="table-responsive">
           <table class = "table  table-filter">
             <tbody>
-              <?php foreach ($propositions as $prop) {
+              <?php foreach ($propositions as $prop): ?>
 
-                echo '<tr class = "clickable-href" data-href = "'.base_url('soutenir/proposition/'.$prop['id']).'">';
-                  echo '<td>';
+                <tr class = "clickable-href" data-href = "'.base_url('soutenir/proposition/'.$prop['id']).'">
+                  <td>
 
-                    echo '<div class="media">';
+                    <div class="media">
 
-                      echo '<a href="#" class="pull-left"> <img src="https://www.gravatar.com/avatar/'.$prop['gravatar_hash'].'" class="media-photo"> </a>';
-                      echo '<div class="media-body">';
-                        echo '<span class="media-meta pull-right">'.$prop['_date'].'</span>';
-                        echo '<h4 class="title">';
-                          echo $prop['auteur_pseudo'];
-                        echo '</h4>';
-                        echo '<div>';
-                          echo '<p class="pull-right"><span class = "text-success">'.$prop['pour'].' pour</span> - <span class = "text-danger">'.$prop['contre'].' contre</span> </p>';
-                          echo '<p class="summary">'.$prop['titre'].'</p>';
-                        echo '</div>';
-                      echo '</div>';
+                      <a href="#" class="pull-left"> <img src="https://www.gravatar.com/avatar/'.$prop['gravatar_hash'].'" class="media-photo"> </a>
+                      <div class="media-body">
+                        <span class="media-meta pull-right"><?php echo $prop['_date']; ?></span>
+                        <h4 class="title">
+                          <?php echo $prop['auteur_pseudo']; ?>
+                        </h4>
+                        <div>
+                          <p class="pull-right"><span class = "text-success"><?php echo $prop['pour']; ?> pour</span> - <span class = "text-danger">'.$prop['contre'].' contre</span> </p>
+                          <p class="summary"><?php echo $prop['titre']; ?> </p>
+                        </div>
+                      </div>
 
-                    echo '</div>';
+                    </div>
 
-                  echo '</td>';
-                echo '</tr>';
+                  </td>
+                </tr>
 
-              } ?>
+
+
+            <?php endforeach; ?>
 
             </tbody>
           </table>
