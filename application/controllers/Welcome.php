@@ -25,11 +25,7 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('header');
 
-			echo '<h1>Site en cours de construction</h1>';
-
-			if($this->session->userdata('logged') != null){
-				echo '<p>'.$this->session->userdata('logged')['pseudo'].'</p>';
-			}
+			$this->load->view('home.php');
 
 		$this->load->view('footer');
 	}

@@ -26,6 +26,8 @@ footer {
 
   box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px;
 
+  font-family: 'Courgette';
+
 
 }
 
@@ -210,4 +212,21 @@ color: #d9534f;
 }
 .table-filter .media .summary {
 font-size: 14px;
+}
+
+
+
+
+
+#panel-home p {
+  font-size : 16px;
+}
+
+#panel-home h1, h2{
+  font-family: 'Courgette';
+  color : #0098b6;
+}
+
+#panel-home .btn-insoumis-bleu {
+  width : 140px;
 }
