@@ -2,11 +2,13 @@
 <div class="container">
   <div class="col-lg-8 col-lg-offset-2 col-xs-12">
 
-    <div class="panel panel-default">
+    <div class="panel panel-default panel-insoumis">
+
+			<div class="panel-heading">
+				<h3 class = "panel-title"><?php echo $prop['pour']; ?></h3>
+
+			</div>
       <div class="panel-body">
-
-				<h1>Connexion</h1>
-
         <?php if($erreur != null && $erreur != ''):?>
 
           <div class="alert alert-danger" role="alert">
