@@ -122,7 +122,10 @@ Class Proposition extends CI_Model {
             "_date" => $ligne->_date,
 
             "autorisation" => $ligne->autorisation,
-            "date_autorisation" => $ligne->date_autorisation
+            "date_autorisation" => $ligne->date_autorisation,
+
+            "pour" => $ligne->pour,
+            "contre" => $ligne->contre
           );
 
           $propositions[] = $proposition;
@@ -183,10 +186,13 @@ Class Proposition extends CI_Model {
             "_date" => $query->row()->_date,
 
             "autorisation" => $query->row()->autorisation,
-            "date_autorisation" => $query->row()->date_autorisation
+            "date_autorisation" => $query->row()->date_autorisation,
+
+            "pour" => $query->row()->pour,
+            "contre" => $query->row()->contre
           );
         }
- 
+
         // Si l'utilisateur est connecté, on cherche ce qu'il a voté.
         if($this->session->userdata('logged') != null){
 
