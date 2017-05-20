@@ -25,7 +25,7 @@ Class User extends CI_Model {
           "id" => $query->row()->id,
           "_id" => $query->row()->_id,
           "pseudo" => $query->row()->pseudo,
-          "email" => $quer->row()->email
+          "email" => $query->row()->email
         ));
 
       }
