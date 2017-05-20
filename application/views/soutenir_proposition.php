@@ -2,7 +2,7 @@
 
   <div class="col-lg-8 col-lg-offset-2 col-xs-12">
 
-    <div class="panel panel-insoumis panel-proposition">
+    <div class="panel panel-proposition">
 
       <div class="panel-heading">
 
