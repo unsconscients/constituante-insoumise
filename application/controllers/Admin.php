@@ -37,6 +37,9 @@ class Admin extends CI_Controller {
 
 				$this->load->view('admin/commentaires/commentaires');
 
+			} else {
+
+				redirect('/admin?page=propositions');
 			}
 
 		$this->load->view('admin/footer');
@@ -92,7 +95,7 @@ class Admin extends CI_Controller {
 
 					} else {
 
-						redirect('admin?page=propositions');
+						redirect('/admin?page=propositions');
 
 					}
 

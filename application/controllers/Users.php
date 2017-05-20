@@ -91,9 +91,9 @@ class Users extends CI_Controller {
       );
 
       if($ok){
-        redirect('users/msg_signup');
+        redirect('/msg/signup');
       } else {
-        redirect('users/singup?erreur=Erreur ! Cette adresse Email existe déjà !');
+        redirect('/users/singup?erreur=Erreur ! Cette adresse Email existe déjà !');
       }
 
 
