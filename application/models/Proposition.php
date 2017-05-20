@@ -79,7 +79,8 @@ Class Proposition extends CI_Model {
 
           ' FROM propositions'.
           ' JOIN users ON users.id = propositions.id_user'.
-          ' WHERE propositions.autorisation = 1';
+          ' WHERE propositions.autorisation = 1',
+          ' ORDER by propositions._date';
 
         } else {
           $sql = 'SELECT'.
@@ -101,7 +102,8 @@ Class Proposition extends CI_Model {
           ' users.email as auteur_email'.
 
           ' FROM propositions'.
-          ' JOIN users ON users.id = propositions.id_user';
+          ' JOIN users ON users.id = propositions.id_user',
+          ' ORDER by propositions._date';
         }
 
 
