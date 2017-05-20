@@ -36,8 +36,11 @@
         <p>Enfin, fruit de discussions collectives ou de pensées individuelles, vous pouvez présenter sur cette plate-forme vos propositions pour une <b>constitution insoumise et démocratique !</b></p>
 
         <div class="text-center">
-          <a href="<?php echo base_url('users/login'); ?>" class = "btn btn-default btn-insoumis-bleu">Connexion</a>
-          <a href="<?php echo base_url('users/signup'); ?>" class = "btn btn-default btn-insoumis-bleu">Créer un compte</a>
+          <?php if($this->session->userdata('logged') == null): ?>
+            <a href="<?php echo base_url('users/login'); ?>" class = "btn btn-default btn-insoumis-bleu">Connexion</a>
+            <a href="<?php echo base_url('users/signup'); ?>" class = "btn btn-default btn-insoumis-bleu">Créer un compte</a>
+          <?php endif;?>
+        
         </div>
       </div>
     </div>
