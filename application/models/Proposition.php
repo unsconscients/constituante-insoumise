@@ -111,8 +111,8 @@ Class Proposition extends CI_Model {
           $proposition = array(
             "id" => $ligne->id,
             "_id" => $ligne->_id,
-            "auteur_pseudo" => $query->row()->auteur_pseudo,
-            "auteur_email" => $query->row()->auteur_email,
+            "auteur_pseudo" => $ligne->auteur_pseudo,
+            "auteur_email" => $ligne->auteur_email,
             "id_user" => $ligne->id_user,
             "gravatar_hash" => md5($ligne->auteur_email),
 
