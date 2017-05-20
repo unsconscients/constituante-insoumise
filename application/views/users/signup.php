@@ -18,7 +18,7 @@
 
           <div class="form-group">
             <label>Pseudo <small class = "text-muted">(*)</small> :</label>
-            <input type="email" name="pseudo" class = "form-control">
+            <input type="email" name="email" class = "form-control">
           </div>
 
           <div class="form-group">
