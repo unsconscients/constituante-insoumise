@@ -52,53 +52,7 @@ class Proposer extends CI_Controller {
 
 			$ok = $this->proposition->ajouter_propositon($proposition);
 
-			if($ok == false){
-
-				// Une erreur s'est produite, on affiche une page d'erreur à l'utiliseur.
-
-				$this->load->view('header');
-					$this->load->view('proposer_erreur');
-				$this->load->view('footer');
-
-			} else {
-
-				// La proposition a bien été ajoutée -> $ok = id de la proposition.
-
-				// On envoie un email de confirmation.
-
-				$config_email = Array(
-			 		'mailtype'  => 'html',
-			 		'charset'   => 'utf-8'
-			 	);
-
-			 	$this->load->library('email', $config_email);
-
-				$this->email->from('moderateurs@lappel-presse.fr', 'Modérateurs de la Plateforme Consitutante');
-				$this->email->to($proposition['auteur_email']);
-
-				$this->email->subject('Merci de votre participation !');
-
-				$body = $this->load->view('email_confirmation_proposition', array(
-					'auteur_pseudo' => $proposition['auteur_pseudo'],
-					'titre' => $proposition['titre'],
-					'confirm_url' => base_url('proposer/confirmation/'.$ok)
-				), true);
-
-				$this->email->message($body);
-
-				$this->email->send();
-
-				//On affiche une page de succès à l'utilisateur.
-
-				$this->load->view('header');
-					$this->load->view('proposer_succes');
-				$this->load->view('footer');
-
-
-			}
-
-		}
-
+			redirect('/soutenir');
 	}
 
 

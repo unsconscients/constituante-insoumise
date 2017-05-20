@@ -60,7 +60,7 @@ Class User extends CI_Model {
       if($query->num_rows() > 0){
         $ok = false;
       } else {
-        $sql = "INSERT INTO users (pseudo, email, password, nom, prenom, adresse, ville, code_postal, _date) VALUES (?,?,?,?,?,?,?,?, now())";
+        $sql = "INSERT INTO users (pseudo, email, password, nom, prenom, ville, code_postal, _date) VALUES (?,?,?,?,?,?,?,?, now())";
 
         $this->db->query($sql, array(
           $pseudo,
@@ -68,7 +68,6 @@ Class User extends CI_Model {
           md5($password),
           $data['nom'],
           $data['prenom'],
-          $data['adresse'],
           $data['ville'],
           $data['code_postal']
           // Ajouter d'autres...
