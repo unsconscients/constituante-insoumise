@@ -13,7 +13,7 @@
             <tbody>
               <?php foreach ($propositions as $prop): ?>
 
-                <tr class = "clickable-href" data-href = "'.base_url('soutenir/proposition/'.$prop['id']).'">
+                <tr class = "clickable-href" data-href = "<?php echo base_url('soutenir/proposition/'.$prop['id']); ?>">
                   <td>
 
                     <div class="media">
