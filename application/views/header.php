@@ -51,7 +51,7 @@
             <li><a href="<?php echo base_url('soutenir')?>" class = "navbar-insoumis-boutton"><span class = "fa fa-thumbs-up"></span> Soutenir</a></li>
             <li><a href="<?php echo base_url('proposer')?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Proposer</a></li>
 
-						<?php if($this->session->userdata('logged') != null) : ?>
+						<?php if($this->session->userdata('logged') == null) : ?>
 
 							<li><a href="<?php echo base_url('users/login')?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Connexion</a></li>
 
