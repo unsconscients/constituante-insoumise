@@ -1,11 +1,12 @@
 <div class="container">
 
-  <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+  <div class="jumbotron jumbotron-insoumis">
+    <h1>Voici les dernières propositions</h1>
+    <p> Blah ....</p>
+  </div>
 
-    <div class="jumbotron jumbotron-insoumis">
-      <h1>Voici les dernières propositions</h1>
-      <p> Blah ....</p>
-    </div>
+
+  <div class="col-lg-8 col-lg-offset-2 col-xs-12">
 
     <div class="panel panel-default panel-insoumis">
       <div class="panel-body">

@@ -18,34 +18,65 @@ class Soutenir extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index($id = '')
 	{
+
 		$this->load->model('proposition');
 
-		$propositions = $this->proposition->get_propositions(true);
-
 		$this->load->view('header');
 
-			$this->load->view('soutenir_acceuil', array(
-				"propositions" => $propositions
-			));
+		if($id != '') {
 
-		$this->load->view('footer');
-	}
-
-
-	public function proposition($id = '')
-	{
-		$this->load->view('header');
-
-			$this->load->model('proposition');
 			$proposition = $this->proposition->get_proposition($id);
 
 			$this->load->view('soutenir_proposition', array(
 				'proposition' => $proposition
 			));
 
+
+		} else {
+
+			$propositions = $this->proposition->get_propositions(true);
+
+			$this->load->view('soutenir_acceuil', array(
+				"propositions" => $propositions
+			));
+
+		}
+
 		$this->load->view('footer');
+	}
+
+
+	public function proposition($id = '', $pour_contre = '')
+	{
+		if($this->input->post('email') != null && $this->input->post('email') != ''){
+
+			// On a donné son email et on souhaite être pour/contre cette proposition.
+
+			$this->load->model('proposition');
+			$proposition = $this->proposition->pour($id, $this->input->post('pseudo'));
+
+
+		} else {
+
+			// Message pour obtenir l'email avant de continuer.
+
+			$this->load->view('header');
+
+
+
+				$this->load->view('soutenir_proposition', array(
+					'proposition' => $proposition
+				));
+
+			$this->load->view('footer');
+
+
+		}
+
+
+
 	}
 
 
