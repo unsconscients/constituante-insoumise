@@ -60,7 +60,7 @@ Class User extends CI_Model {
       if($query->num_rows() > 0){
         $ok = false;
       } else {
-        $sql = "INSERT INTO users (pseudo, email, password, nom, prenom, ville, code_postal, _date) VALUES (?,?,?,?,?,?,?,?, now())";
+        $sql = "INSERT INTO users (pseudo, email, password, nom, prenom, ville, code_postal, _date) VALUES (?,?,?,?,?,?,?, now())";
 
         $this->db->query($sql, array(
           $pseudo,
