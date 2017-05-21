@@ -125,7 +125,7 @@ Class Commentaire extends CI_Model {
 
       foreach($query->result() as $ligne){
 
-        $proposition['commentaires'][] = array(
+        $commentaire = array(
           "id" => $ligne->id,
           "id_user" => $ligne->id_user,
           "pseudo" => $ligne->pseudo,
@@ -134,6 +134,8 @@ Class Commentaire extends CI_Model {
           "contenu" => $ligne->contenu,
           "_date" => $ligne->_date
         );
+
+        $proposition['commentaires'][] = $commentaire;
 
       }
 
