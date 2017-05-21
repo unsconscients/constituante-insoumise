@@ -25,7 +25,7 @@
                           <?php echo $prop['titre']; ?>
                         </h4>
                         <div>
-                          <p class="pull-right"><span class = "text-success"><?php echo $prop['pour']; ?> pour</span> - <span class = "text-danger"><?php echo $prop['contre']; ?> contre</span> </p>
+                          <p class="pull-right"><span class = "text-success"><?php echo $prop['pour']; ?> <span class = "glyphicon glyphicon-thumbs-up"></span></span> - <span class = "text-danger"><?php echo $prop['contre']; ?> <span class = "glyphicon glyphicon-thumbs-down"></span></span> </p>
                           <p class="summary"><?php echo $prop['auteur_pseudo']; ?> </p>
                         </div>
                       </div>

@@ -21,11 +21,6 @@
             <textarea name="contenu" class = "form-control" rows = "15"></textarea>
           </div>
 
-          <div class="form-group">
-            <input type="checkbox" >
-            <label for="">J'accepte les conditions d'utilisation de la plateforme.</label>
-          </div>
-
         </div>
       </div>
       <!-- .panel (proposition) -->
