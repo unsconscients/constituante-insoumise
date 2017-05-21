@@ -86,8 +86,8 @@
       </div>
 
     <?php endif;?>
-    
-    <!-- Envoi commentaire -->
+
+    <!-- Laissez un commentaire -->
 
     <div class="panel panel-default panel-commentaire ng-scope">
       <div class="panel-heading">
