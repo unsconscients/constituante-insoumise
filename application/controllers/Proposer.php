@@ -39,7 +39,6 @@ class Proposer extends CI_Controller {
 
 		if($this->session->userdata('logged') != null &&
 			$this->input->post('titre') != null &&
-			$this->input->post('mots') != null &&
 			$this->input->post('contenu') != null){
 
 			// On a au moins des coordonnés, on continue...
@@ -52,7 +51,6 @@ class Proposer extends CI_Controller {
 				"id_user" => $this->session->userdata('logged')['id'],
 
 				"titre" => $this->input->post('titre'),
-				"mots_cles" => $this->input->post('mots'),
 				"contenu" => $this->input->post('contenu')
 			);
 

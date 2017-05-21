@@ -17,11 +17,6 @@
           </div>
 
           <div class="form-group">
-            <label for="">Mots clés <small>(séparés par une virgule)</small></label>
-            <input type="text" name="mots" class = "form-control">
-          </div>
-
-          <div class="form-group">
             <label for="">Contenu</label>
             <textarea name="contenu" class = "form-control" rows = "15"></textarea>
           </div>

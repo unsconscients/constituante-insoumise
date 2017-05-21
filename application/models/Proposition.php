@@ -17,13 +17,12 @@ Class Proposition extends CI_Model {
 
       try
       {
-        $sql = 'INSERT INTO propositions (id_user, titre, mots_cles, contenu, _date ) VALUES (?,?,?,?, now() )';
+        $sql = 'INSERT INTO propositions (id_user, titre, contenu, _date ) VALUES (?,?,?, now() )';
 
         $this->db->query($sql, array(
           $array['id_user'],
 
           $array['titre'],
-          $array['mots_cles'],
           $array['contenu']
         ));
 
@@ -65,7 +64,6 @@ Class Proposition extends CI_Model {
           ' propositions.id_user,'.
           ' propositions.titre,'.
           ' propositions.contenu,'.
-          ' propositions.mots_cles,'.
           ' propositions._date,'.
 
           ' propositions.autorisation,'.
@@ -89,7 +87,6 @@ Class Proposition extends CI_Model {
           ' propositions.id_user,'.
           ' propositions.titre,'.
           ' propositions.contenu,'.
-          ' propositions.mots_cles,'.
           ' propositions._date,'.
 
           ' propositions.autorisation,'.
@@ -119,7 +116,6 @@ Class Proposition extends CI_Model {
             "gravatar_hash" => md5($ligne->auteur_email),
 
             "titre" => $ligne->titre,
-            "mots_cles" => $ligne->mots_cles,
             "contenu" => $ligne->contenu,
             "_date" => $ligne->_date,
 
@@ -156,7 +152,6 @@ Class Proposition extends CI_Model {
         ' propositions.id_user,'.
         ' propositions.titre,'.
         ' propositions.contenu,'.
-        ' propositions.mots_cles,'.
         ' propositions._date,'.
 
         ' propositions.autorisation,'.
@@ -183,7 +178,6 @@ Class Proposition extends CI_Model {
             "gravatar_hash" => md5($query->row()->auteur_email),
 
             "titre" => $query->row()->titre,
-            "mots_cles" => $query->row()->mots_cles,
             "contenu" => $query->row()->contenu,
             "_date" => $query->row()->_date,
 
