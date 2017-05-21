@@ -56,10 +56,10 @@
 
               <td class = "text-center">
 
-                <span class = "d-inline">
-                  <a href = "<?php echo base_url('admin/propositions/consulter/'.$prop['id']);?>" class = "btn btn-default"><span class = "glyphicon glyphicon-search"></span></a>
-                  <a href = "<?php echo base_url('admin/propositions/supprimer/'.$prop['id']);?>" class = "btn btn-danger"><span class = "glyphicon glyphicon-remove"></span></a>
-                </span>
+
+                  <a href = "<?php echo base_url('admin/propositions/consulter/'.$prop['id']);?>" class = "d-inline btn btn-default"><span class = "glyphicon glyphicon-search"></span></a>
+                  <a href = "<?php echo base_url('admin/propositions/supprimer/'.$prop['id']);?>" class = "d-inline btn btn-danger"><span class = "glyphicon glyphicon-remove"></span></a>
+
               </td>
             </tr>
 
