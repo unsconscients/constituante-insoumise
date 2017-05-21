@@ -22,7 +22,7 @@ class Proposer extends CI_Controller {
 	{
 
 		if($this->session->userdata('logged') == null){
-			redirect('users/login');
+			redirect('users/login?erreur=Il faut avoir un compte pour pouvoir soumettre une Proposition.');
 		} else {
 			$this->load->view('header');
 
