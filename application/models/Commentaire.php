@@ -153,6 +153,12 @@ Class Commentaire extends CI_Model {
       $this->db->query($sql, array($autorise, $id));
     }
 
+    public function supprime($id)
+    {
+      $sql = "DELETE FROM commentaires WHERE id = ?";
+      $this->db->query($sql, array($id));
+    }
+
 }
 
 ?>

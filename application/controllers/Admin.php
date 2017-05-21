@@ -155,9 +155,8 @@ class Admin extends CI_Controller {
 
 			case 'supprime':
 
-				$this->load->view('admin/header');
-					$this->load->view('admin_supprime_commentaire');
-				$this->load->view('admin/footer');
+				$this->commentaire->supprime($id);
+				redirect('/admin?page=commentaires');
 
 				break;
 				// break supprimer
