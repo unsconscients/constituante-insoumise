@@ -58,30 +58,35 @@
 
 
     <!-- commentaires -->
-    <div class="panel panel-default panel-commentaire ng-scope">
 
-      <div class="panel-heading">
+    <?php if(isset($proposition['commentaires']) && count($proposition['commentaires']) > 0) : ?>
 
-        <h3 class="panel-title ng-binding"><?php echo count($proposition['commentaires']).' Commentaires'; ?> </h3>
+      <div class="panel panel-default panel-commentaire ng-scope">
+
+        <div class="panel-heading">
+
+          <h3 class="panel-title ng-binding"><?php echo count($proposition['commentaires']).' Commentaires'; ?> </h3>
+
+        </div>
+
+        <ul class="list-group">
+          <?php foreach ($proposition['commentaires'] as $comm): ?>
+
+            <li class="list-group-item ng-scope" ng-repeat="comment in commentaires">
+              <h5 class="ng-binding"> <span class="fa fa-user"></span> <?php echo $comm['pseudo']; ?></h5>
+              <h5> <small class="ng-binding"> <span class="fa fa-envelope"></span> <?php echo $comm['email']; ?></small></h5>
+              <h5> <small class="ng-binding"> <span class="fa fa-clock-o"></span> <?php echo $comm['_date']; ?></small></h5>
+
+              <p class="ng-binding"><?php echo $comm['contenu']?></p>
+            </li>
+
+          <?php endforeach;?>
+        </ul>
 
       </div>
 
-      <ul class="list-group">
-        <?php foreach ($proposition['commentaires'] as $comm): ?>
-
-          <li class="list-group-item ng-scope" ng-repeat="comment in commentaires">
-            <h5 class="ng-binding"> <span class="fa fa-user"></span> <?php echo $comm['pseudo']; ?></h5>
-            <h5> <small class="ng-binding"> <span class="fa fa-envelope"></span> <?php echo $comm['email']; ?></small></h5>
-            <h5> <small class="ng-binding"> <span class="fa fa-clock-o"></span> <?php echo $comm['_date']; ?></small></h5>
-
-            <p class="ng-binding"><?php echo $comm['contenu']?></p>
-          </li>
-
-        <?php endforeach;?>
-      </ul>
-
-    </div>
-
+    <?php endif;?>
+    
     <!-- Envoi commentaire -->
 
     <div class="panel panel-default panel-commentaire ng-scope">
