@@ -113,13 +113,15 @@ footer {
 
 
 
-
+.container-home{
+  background: linear-gradient(rgba(0, 152, 182, 0.6),rgba(0, 152, 182, 0.3)),linear-gradient(rgba(0, 152, 182, 0.2),rgba(0, 152, 182, 1) 50vw, rgba(0, 152, 182, 1) 60vw), url('http://lappel-presse.fr/constituante-insoumise/assets/img/place-republique.jpg') no-repeat;
+  background-size: 100% auto;
+}
 
 .jumbotron-home {
   margin-top: -21px;
- 
-  background: linear-gradient(rgba(0, 152, 182, 0.6),rgba(0, 152, 182, 0.3)),linear-gradient(rgba(0, 152, 182, 0.2),rgba(0, 152, 182, 1) 50vw, rgba(0, 152, 182, 1) 60vw), url('http://lappel-presse.fr/constituante-insoumise/assets/img/place-republique.jpg') no-repeat;
-  background-size: 100% auto;
+
+
   background-color: #0098B6;
 
   color : #fff;
