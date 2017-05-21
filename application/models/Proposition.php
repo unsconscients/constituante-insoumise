@@ -216,6 +216,7 @@ Class Proposition extends CI_Model {
 
         // On ajoute les commentaires.
         $this->load->model('commentaire');
+        $proposition['commentaires'] = array();
         $this->commentaire->get_commentaires($proposition);
 
 
