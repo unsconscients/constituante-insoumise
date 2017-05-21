@@ -116,12 +116,13 @@ Class Commentaire extends CI_Model {
     }
 
 
-    public function get_commentaires($proposition){
+    public function get_commentaires($id_proposition){
 
+      $commentaires = array();
 
       $sql = 'SELECT id, id_user, pseudo, email, contenu, _date FROM commentaires WHERE autorisation = 1 AND id_proposition = ? ORDER BY _date';
 
-      $query = $this->db->query($sql, array(intval($proposition['id'])));
+      $query = $this->db->query($sql, array($id_proposition));
 
       foreach($query->result() as $ligne){
 
@@ -135,12 +136,11 @@ Class Commentaire extends CI_Model {
           "_date" => $ligne->_date
         );
 
-        $proposition['commentaires'][] = $commentaire;
+        $commentaires[] = $commentaire;
 
       }
 
-
-
+      return $commentaires;
 
     }
 

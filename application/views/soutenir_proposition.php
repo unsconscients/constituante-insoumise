@@ -91,7 +91,7 @@
 
     <div class="panel panel-default panel-commentaire ng-scope">
       <div class="panel-heading">
-        <h3 class="panel-title">Laissez une commentaire</h3>
+        <h3 class="panel-title">Laissez un commentaire</h3>
       </div>
 
       <div class="panel-body">
