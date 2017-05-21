@@ -110,7 +110,7 @@
 
           <p><small class = "text-muted">Les commentaires sont vérifiés par un modérateur !</small></p>
           <div class="form-group">
-            <button type = "submit" class="btn btn-default btn-insoumis-bleu form-control">Ajouter</button>
+            <button type = "submit" class="btn btn-default btn-insoumis-rouge form-control">Ajouter</button>
           </div>
         </form>
 

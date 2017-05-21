@@ -37,10 +37,10 @@
 
         <div class="text-center">
           <?php if($this->session->userdata('logged') == null): ?>
-            <a href="<?php echo base_url('users/login'); ?>" class = "btn btn-default btn-insoumis-bleu">Connexion</a>
-            <a href="<?php echo base_url('users/signup'); ?>" class = "btn btn-default btn-insoumis-bleu">Créer un compte</a>
+            <a href="<?php echo base_url('users/login'); ?>" class = "btn btn-default btn-insoumis-rouge">Connexion</a>
+            <a href="<?php echo base_url('users/signup'); ?>" class = "btn btn-default btn-insoumis-rouge">Créer un compte</a>
           <?php endif;?>
-        
+
         </div>
       </div>
     </div>
