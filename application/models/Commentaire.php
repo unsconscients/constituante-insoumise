@@ -113,7 +113,7 @@ Class Commentaire extends CI_Model {
 
       }
 
-      return $commentaires;
+      return $commentaire;
 
     }
 
@@ -152,7 +152,7 @@ Class Commentaire extends CI_Model {
 
     }
 
-    
+
     public function autorise($id, $autorise)
     {
       $sql = "UPDATE commentaires SET autorisation = ?, date_autorisation = now() WHERE id = ?";
