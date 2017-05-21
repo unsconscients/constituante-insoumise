@@ -59,7 +59,7 @@
 
     <!-- commentaires -->
 
-    <?php if(isset($proposition['commentaires']) && count($proposition['commentaires']) > 0) : ?>
+    <?php // if(isset($proposition['commentaires']) && count($proposition['commentaires']) > 0) : ?>
 
       <div class="panel panel-default panel-commentaire ng-scope">
 
@@ -85,7 +85,7 @@
 
       </div>
 
-    <?php endif;?>
+    <?php // endif;?>
 
     <!-- Laissez un commentaire -->
 
