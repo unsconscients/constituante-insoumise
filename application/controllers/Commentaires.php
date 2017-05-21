@@ -28,7 +28,7 @@ class Msg extends CI_Controller {
 
   public function ajouter($id_proposition = '')
   {
-		if($id_proposition != '' && $this->input->post('pseudo') != null && $this->input->post('email') != null && $this->input->post('contenu' != null) {
+		if($id_proposition != '' && $this->input->post('pseudo') != null && $this->input->post('email') != null && $this->input->post('contenu' != null)) {
 
 			$id_user = 0;
 			if($this->session->userdata('logged') != null){
