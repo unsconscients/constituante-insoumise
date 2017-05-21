@@ -1,4 +1,13 @@
-<div class="container">
+<div class="jumbotron jumbotron-home">
+  <div class="text-center">
+    <img class = "phi" src="http://lappel-presse.fr/constituante-insoumise/assets/img/phi.png" alt="">
+
+    <h1>La Constituante Insoumise</h1>
+    <p>Bienvenue sur la plate-forme constituante de la France insoumise. Ici, vous pourrez participer à l'élaboration de la constitution de notre future république. Proposez vous-même des éléments, et/ou soutenez d'autres propositions. À vous de jouer !</p>
+  </div>
+</div>
+
+<div class="container container-home">
 
   <div class="col-lg-8 col-lg-offset-2 col-xs-12">
 
