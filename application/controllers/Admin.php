@@ -141,11 +141,13 @@ class Admin extends CI_Controller {
 
 	public function commentaires($action, $id)
 	{
+		$this->load->model('commentaire');
+
 		switch ($action) {
 			case 'supprimer':
 
 				$this->load->view('admin/header');
-					$this->load->view('admin_supprimer_commentaire');
+					$this->load->view('admin/commentaires/supprimer_commentaire');
 				$this->load->view('admin/footer');
 
 				break;
@@ -160,26 +162,28 @@ class Admin extends CI_Controller {
 				break;
 				// break supprimer
 
-			case 'autoriser':
-
-				$this->load->view('admin/header');
-					$this->load->view('admin_autoriser_commentaire');
-				$this->load->view('admin/footer');
-
-				break;
-				// break supprimer
-
 			case 'autorise':
 
-				$this->load->view('admin/header');
-					$this->load->view('admin_autorise_commentaire');
-				$this->load->view('admin/footer');
+				if($this->input->get('autorise') != null && $this->input->get('autorise') == 'oui' ){
+
+					$this->commentaire->autorise($id, 1);
+					redirect('/admin?page=commentaires');
+
+				} else if ($this->input->get('autorise') != null && $this->input->get('autorise') == 'non' ){
+
+					$this->commentaire->autorise($id, 0);
+					redirect('/admin?page=commentaires');
+
+				} else {
+					redirect('/admin?page=commentaires');
+				}
 
 				break;
 
 			case 'consulter':
 				$this->load->view('admin/header');
-					$this->load->view('admin_consulter_commentaire');
+					$commentaire = $this->commentaire->get_commentaire($id);
+					$this->load->view('admin/commentaires/consulter_commentaire', $commentaire);
 				$this->load->view('admin/footer');
 				break;
 		}
