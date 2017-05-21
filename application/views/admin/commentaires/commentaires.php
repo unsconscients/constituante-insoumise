@@ -36,7 +36,7 @@
           <?php foreach($commentaires as $comm): ?>
 
             <tr>
-              <td><a href="<?php echo base_url('soutenir/proposition/'.$comm['id_propoisition']); ?>"><?php echo $comm['proposition']?></a></td>
+              <td><a href="<?php echo base_url('soutenir/proposition/'.$comm['id_proposition']); ?>"><?php echo $comm['proposition']?></a></td>
               <td><?php echo $comm['pseudo']?></td>
               <td><?php echo $comm['email']?></td>
               <td><?php echo $comm['_date']?></td>
