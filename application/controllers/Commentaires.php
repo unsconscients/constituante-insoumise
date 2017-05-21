@@ -46,6 +46,8 @@ class Commentaires extends CI_Controller {
 
 			redirect('/soutenir/proposition/'.$id_proposition);
 
+		} else {
+			redirect('/soutenir');
 		}
 
   }
