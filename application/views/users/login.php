@@ -33,6 +33,8 @@
 						<button type="submit" name="button" class = "btn btn-default btn-insoumis-rouge form-control">Connexion</button>
 					</div>
 
+          <p class = "text-muted">Pas de compte ? <a href="<?php echo base_url('users/signup'); ?>">Créer un compte !</a></p>
+
 
 				</form>
 
