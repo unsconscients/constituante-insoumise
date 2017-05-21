@@ -21,11 +21,17 @@ class Proposer extends CI_Controller {
 	public function index()
 	{
 
-		$this->load->view('header');
+		if($this->session->userdata('logged') == null){
+			redirect('users/login');
+		} else {
+			$this->load->view('header');
 
-			$this->load->view('proposer', $this->session->userdata('logged'));
+				$this->load->view('proposer', $this->session->userdata('logged'));
 
-		$this->load->view('footer');
+			$this->load->view('footer');
+		}
+
+
 	}
 
 	public function proposition()
