@@ -43,14 +43,24 @@
 
           <ul class = "nav navbar-nav">
 
-            <li><a href="#" class = "navbar-insoumis-titre">Modérateurs</a></li>
+            <li><a href="<?php echo base_url('admin?page=propositions'); ?>" class = "navbar-insoumis-titre">Modérateurs</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a ng-href="<?php echo base_url('soutenir'); ?>" class = "navbar-insoumis-boutton"><span class = "fa fa-thumbs-up"></span> Soutenir</a></li>
-            <li><a ng-href="<?php echo base_url('proposer'); ?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Proposer</a></li>
+            <li><a href="<?php echo base_url('soutenir'); ?>" class = "navbar-insoumis-boutton"><span class = "fa fa-thumbs-up"></span> Soutenir</a></li>
+            <li><a href="<?php echo base_url('proposer'); ?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Proposer</a></li>
 
+						<?php if($this->session->userdata('logged') == null) : ?>
+
+							<li><a href="<?php echo base_url('users/login')?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Connexion</a></li>
+
+						<?php else : ?>
+
+							<li><a href="<?php echo base_url('users/logout')?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Déconnexion</a></li>
+
+						<?php endif; ?>
+						
           </ul>
 
         </div>
