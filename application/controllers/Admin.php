@@ -27,6 +27,7 @@ class Admin extends CI_Controller {
 			$page = $this->input->get('page');
 
 			$this->load->model('proposition');
+			$this->load->model('commentaire');
 
 			$this->load->view('admin/header');
 
