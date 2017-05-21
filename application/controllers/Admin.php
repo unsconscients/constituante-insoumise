@@ -35,11 +35,7 @@ class Admin extends CI_Controller {
 					$propositions = $this->proposition->get_propositions(false);
 					$this->load->view('admin/propositions/propositions', array('propositions' => $propositions));
 
-				} else if ($page == 'commentaires'){
-
-					$this->load->view('admin/commentaires/commentaires');
-
-				} else if($page == 'commentaires') {
+				} else if ($page == 'commentaires') {
 
 					$commentaires = $this->commentaire->get_all_commentaires();
 					$this->load->view('admin/commentaires/commentaires', array('commentaires' => $commentaires));
