@@ -66,7 +66,8 @@ class Admin extends CI_Controller {
 			case 'supprimer':
 
 				$this->load->view('admin/header');
-					$this->load->view('admin/propositions/supprimer_proposition', array('id') => $id);
+					$proposition = $this->proposition->get_proposition($id);
+					$this->load->view('admin/propositions/supprimer_proposition', $proposition);
 				$this->load->view('admin/footer');
 
 				break;
