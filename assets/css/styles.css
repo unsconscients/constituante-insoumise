@@ -2,9 +2,6 @@
   Les styles de la plateforme constituante insoumise !
 **/
 
-html, body{
-  height : 100%;
-}
 
 body {
   margin-top : 71px;
@@ -118,15 +115,9 @@ footer {
 
 
 
-
-
-.container-home{
-  height : 100%;
-}
 .jumbotron-home {
   margin-top: -21px;
-  height : 100%;
-
+ 
   background: linear-gradient(rgba(0, 152, 182, 0.6),rgba(0, 152, 182, 0.3)),linear-gradient(rgba(0, 152, 182, 0.2),rgba(0, 152, 182, 1) 50vw, rgba(0, 152, 182, 1) 60vw), url('http://lappel-presse.fr/constituante-insoumise/assets/img/place-republique.jpg') no-repeat;
   background-size: 100% auto;
   background-color: #0098B6;
