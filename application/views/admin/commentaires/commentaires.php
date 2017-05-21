@@ -22,6 +22,7 @@
         <table class = "table table-hover table-bordered">
           <thead>
             <tr>
+              <th>Proposition</th>
               <th>Pseudo</th>
               <th>Email</th>
               <th>Création</th>
@@ -35,6 +36,7 @@
           <?php foreach($commentaires as $comm): ?>
 
             <tr>
+              <td><a href="<?php echo base_url('soutenir/proposition/'.$comm['id_propoisition']); ?>"><?php echo $comm['proposition']?></a></td>
               <td><?php echo $comm['pseudo']?></td>
               <td><?php echo $comm['email']?></td>
               <td><?php echo $comm['_date']?></td>
