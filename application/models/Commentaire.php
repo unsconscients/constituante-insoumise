@@ -148,7 +148,7 @@ Class Commentaire extends CI_Model {
 
       }
 
-      return $proposition;
+      
 
     }
 
