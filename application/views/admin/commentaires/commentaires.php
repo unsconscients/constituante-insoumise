@@ -55,8 +55,8 @@
               <td class = "text-center">
 
 
-                  <a href = "<?php echo base_url('admin/commentaires/consulter/'.$prop['id']);?>" class = "d-inline btn btn-default"><span class = "glyphicon glyphicon-search"></span></a>
-                  <a href = "<?php echo base_url('admin/commentaires/supprimer/'.$prop['id']);?>" class = "d-inline btn btn-danger"><span class = "glyphicon glyphicon-remove"></span></a>
+                  <a href = "<?php echo base_url('admin/commentaires/consulter/'.$comm['id']);?>" class = "d-inline btn btn-default"><span class = "glyphicon glyphicon-search"></span></a>
+                  <a href = "<?php echo base_url('admin/commentaires/supprimer/'.$comm['id']);?>" class = "d-inline btn btn-danger"><span class = "glyphicon glyphicon-remove"></span></a>
 
               </td>
             </tr>
