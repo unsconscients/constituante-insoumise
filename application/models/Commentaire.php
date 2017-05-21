@@ -85,9 +85,9 @@ Class Commentaire extends CI_Model {
       try
       {
 
-        $sql = 'SELECT id, id_user, pseudo, email, contenu, _date, autorisation, date_autorisation FROM commentaires ORDER BY _date';
+        $sql = 'SELECT id, id_user, pseudo, email, contenu, _date, autorisation, date_autorisation FROM commentaires WHERE id = ? ORDER BY _date';
 
-        $query = $this->db->query($sql);
+        $query = $this->db->query($sql, array($id));
 
         if($query->num_rows() == 1){
 
@@ -102,7 +102,7 @@ Class Commentaire extends CI_Model {
             "autorisation" => $query->row()->autorisation,
             "date_autorisation" => $query->row()->date_autorisation
           );
- 
+
         }
 
       }
