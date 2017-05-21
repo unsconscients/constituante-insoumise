@@ -117,34 +117,28 @@ Class Commentaire extends CI_Model {
 
 
     public function get_commentaires($proposition){
-      try
-      {
 
-        $proposition['commentaires'] = array();
 
-        $sql = 'SELECT id, id_user, pseudo, email, contenu, _date FROM commentaires WHERE autorisation = 1 AND id_proposition = ? ORDER BY _date';
+      $proposition['commentaires'] = array();
 
-        $query = $this->db->query($sql, array($proposition['id']));
+      $sql = 'SELECT id, id_user, pseudo, email, contenu, _date FROM commentaires WHERE autorisation = 1 AND id_proposition = ? ORDER BY _date';
 
-        foreach($query->result() as $ligne){
+      $query = $this->db->query($sql, array($proposition['id']));
 
-          $proposition['commentaires'][] = array(
-            "id" => $ligne->id,
-            "id_user" => $ligne->id_user,
-            "pseudo" => $ligne->pseudo,
-            "email" => $ligne->email,
-            "gravatar_hash" => md5($ligne->email),
-            "contenu" => $ligne->contenu,
-            "_date" => $ligne->_date
-          );
+      foreach($query->result() as $ligne){
 
-        }
+        $proposition['commentaires'][] = array(
+          "id" => $ligne->id,
+          "id_user" => $ligne->id_user,
+          "pseudo" => $ligne->pseudo,
+          "email" => $ligne->email,
+          "gravatar_hash" => md5($ligne->email),
+          "contenu" => $ligne->contenu,
+          "_date" => $ligne->_date
+        );
 
       }
-      catch( Exception $e )
-      {
 
-      }
 
 
 
