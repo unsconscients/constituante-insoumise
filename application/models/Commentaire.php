@@ -44,7 +44,7 @@ Class Commentaire extends CI_Model {
       try
       {
 
-        $sql = 'SELECT id, id_user, pseudo, email, contenu, _date, autorisation, date_autorisation, (SELECT titre FROM propositions WHERE id = id_proposition) as proposition FROM commentaires ORDER BY _date';
+        $sql = 'SELECT id, id_proposition, id_user, pseudo, email, contenu, _date, autorisation, date_autorisation, (SELECT titre FROM propositions WHERE id = id_proposition) as proposition FROM commentaires ORDER BY _date';
 
         $query = $this->db->query($sql);
 
@@ -52,6 +52,7 @@ Class Commentaire extends CI_Model {
 
           $commentaire = array(
             "id" => $ligne->id,
+            "id_proposition" => $ligne->id_proposition,
             "id_user" => $ligne->id_user,
             "proposition" => $ligne->proposition,
             "pseudo" => $ligne->pseudo,
