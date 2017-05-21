@@ -32,7 +32,7 @@ class Commentaires extends CI_Controller {
 
 			$id_user = 0;
 			if($this->session->userdata('logged') != null){
-				$id_user = intval($this->sessions->userdata('logged')['id']);
+				$id_user = intval($this->session->userdata('logged')['id']);
 			}
 
 			$this->load->model('commentaire');
