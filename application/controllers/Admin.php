@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
 				} else {
 
 					redirect('/admin?page=propositions');
-					
+
 				}
 
 			$this->load->view('admin/footer');
@@ -66,7 +66,7 @@ class Admin extends CI_Controller {
 			case 'supprimer':
 
 				$this->load->view('admin/header');
-					$this->load->view('admin/propositions/supprimer_proposition');
+					$this->load->view('admin/propositions/supprimer_proposition', array('id') => $id);
 				$this->load->view('admin/footer');
 
 				break;
@@ -74,9 +74,10 @@ class Admin extends CI_Controller {
 
 			case 'supprime':
 
-				$this->load->view('admin/header');
-					$this->load->view('admin/propositions/supprime_proposition');
-				$this->load->view('admin/footer');
+				$this->load->model('proposition');
+				$this->proposition->supprimer($id);
+
+				redirect('/admin?page=propositions');
 
 				break;
 				// break supprimer

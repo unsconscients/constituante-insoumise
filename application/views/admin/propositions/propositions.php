@@ -57,6 +57,7 @@
               <td class = "text-center">
 
                 <a href = "<?php echo base_url('admin/propositions/consulter/'.$prop['id']);?>" class = "btn btn-default"><span class = "glyphicon glyphicon-search"></span> Consulter</a>
+                <a href = "<?php echo base_url('admin/propositions/supprimer/'.$prop['id']);?>" class = "btn btn-default"><span class = "glyphicon glyphicon-remove"></span> Supprimer</a>
 
               </td>
             </tr>

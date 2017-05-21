@@ -22,11 +22,11 @@
                       <div class="media-body">
                         <span class="media-meta pull-right"><?php echo $prop['_date']; ?></span>
                         <h4 class="title">
-                          <?php echo $prop['auteur_pseudo']; ?>
+                          <?php echo $prop['titre']; ?>
                         </h4>
                         <div>
                           <p class="pull-right"><span class = "text-success"><?php echo $prop['pour']; ?> pour</span> - <span class = "text-danger"><?php echo $prop['contre']; ?> contre</span> </p>
-                          <p class="summary"><?php echo $prop['titre']; ?> </p>
+                          <p class="summary"><?php echo $prop['auteur_pseudo']; ?> </p>
                         </div>
                       </div>
 
