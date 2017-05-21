@@ -39,10 +39,13 @@ class Admin extends CI_Controller {
 
 					$this->load->view('admin/commentaires/commentaires');
 
+				} else if($page == 'commentaires') {
+
+					$commentaires = $this->commentaire->get_all_commentaires();
+					$this->load->view('admin/commentaires/commentaires', array('commentaires' => $commentaires));
+
 				} else {
-
 					redirect('/admin?page=propositions');
-
 				}
 
 			$this->load->view('admin/footer');

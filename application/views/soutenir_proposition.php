@@ -54,6 +54,67 @@
 
       </div>
     </div>
+
+
+
+    <!-- commentaires -->
+    <div class="panel panel-default panel-commentaire ng-scope">
+
+      <div class="panel-heading">
+
+        <h3 class="panel-title ng-binding"><?php echo count($proposition['commentaires']).' Commentaires'; ?> </h3>
+
+      </div>
+
+      <ul class="list-group">
+        <?php foreach ($proposition['commentaires'] as $comm): ?>
+
+          <li class="list-group-item ng-scope" ng-repeat="comment in commentaires">
+            <h5 class="ng-binding"> <span class="fa fa-user"></span> <?php echo $comm['pseudo']; ?></h5>
+            <h5> <small class="ng-binding"> <span class="fa fa-envelope"></span> <?php echo $comm['email']; ?></small></h5>
+            <h5> <small class="ng-binding"> <span class="fa fa-clock-o"></span> <?php echo $comm['_date']; ?></small></h5>
+
+            <p class="ng-binding"><?php echo $comm['contenu']?></p>
+          </li>
+
+        <?php endforeach;?>
+      </ul>
+
+    </div>
+
+    <!-- Envoi commentaire -->
+
+    <div class="panel panel-default panel-commentaire ng-scope">
+      <div class="panel-heading">
+        <h3 class="panel-title">Laissez une commentaire</h3>
+      </div>
+
+      <div class="panel-body">
+
+        <form method = "POST" action = "<?php echo base_url('commentaires/ajouter/'.$proposition['id']); ?>">
+          <div class="form-group">
+            <label>Pseudo :</label>
+            <input class="form-control" type="text" name = "pseudo" value = "<?php if($this->session->userdata('logged') != null) {echo $this->session->userdata('logged')['pseudo']; } else { echo ''; }?>">
+          </div>
+          <div class="form-group">
+            <label>Email :</label>
+            <input class="form-control" type="email" name = "email" value = "<?php if($this->session->userdata('logged') != null) {echo $this->session->userdata('logged')['email']; } else { echo ''; }?>">
+          </div>
+          <div class="form-group">
+            <label>Commentaire : </label>
+            <textarea class="form-control" name = "contenu"></textarea>
+          </div>
+
+          <p><small class = "text-muted">Les commentaires sont vérifiés par un modérateur !</small></p>
+          <div class="form-group">
+            <button type = "submit" class="btn btn-default btn-insoumis-bleu form-control">Ajouter</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
   </div>
 
 </div>

@@ -214,6 +214,10 @@ Class Proposition extends CI_Model {
           }
         }
 
+        // On ajoute les commentaires.
+        $this->load->model('commentaire');
+        $this->commentaire->get_commentaires($proposition);
+
 
       }
       catch( Exception $e ) { }

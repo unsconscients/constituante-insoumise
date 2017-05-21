@@ -48,8 +48,8 @@
 
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a ng-href="#" class = "navbar-insoumis-boutton"><span class = "fa fa-thumbs-up"></span> Soutenir</a></li>
-            <li><a ng-href="#" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Proposer</a></li>
+            <li><a ng-href="<?php echo base_url('soutenir'); ?>" class = "navbar-insoumis-boutton"><span class = "fa fa-thumbs-up"></span> Soutenir</a></li>
+            <li><a ng-href="<?php echo base_url('proposer'); ?>" class = "navbar-insoumis-boutton"><span class = "fa fa-pencil"></span> Proposer</a></li>
 
           </ul>
 
