@@ -13,6 +13,8 @@ Class User extends CI_Model {
   public function login($email, $password)
   {
 
+    $ok = false;
+
     try
     {
       $sql = 'SELECT id, _id, pseudo, email, moderateur FROM users WHERE email = ? AND password = ? AND confirm = 1';
@@ -29,12 +31,16 @@ Class User extends CI_Model {
           "moderateur" => $query->row()->moderateur
         ));
 
+        $ok = true;
+
       }
 
 
     }
     catch( Exception $e ) { }
 
+    return $ok;
+    
   }
 
 

@@ -39,9 +39,14 @@ class Users extends CI_Controller {
       $password = $this->input->post('password');
 
       $this->load->model('user');
-      $this->user->login($email, $password);
+      $ok = $this->user->login($email, $password);
 
-      redirect();
+			if($ok){
+				redirect();
+			} else {
+				redirect("/users/login?erreur=Email ou Mot de passe Incorrect ! Ou bien votre adresse email n'est pas encore validée (consultez votre boite mail).");
+			}
+
 
     } else {
 
