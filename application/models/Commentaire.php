@@ -102,9 +102,7 @@ Class Commentaire extends CI_Model {
             "autorisation" => $query->row()->autorisation,
             "date_autorisation" => $query->row()->date_autorisation
           );
-
-          $commentaires[] = $commentaire;
-
+ 
         }
 
       }
@@ -148,7 +146,7 @@ Class Commentaire extends CI_Model {
 
       }
 
-      
+
 
     }
 
